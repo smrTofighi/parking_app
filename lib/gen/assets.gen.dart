@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/widgets.dart';
 
@@ -29,6 +29,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/dollar.png
   AssetGenImage get dollar => const AssetGenImage('assets/icons/dollar.png');
 
+  /// File path: assets/icons/facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/icons/facebook.png');
+
+  /// File path: assets/icons/google.png
+  AssetGenImage get google => const AssetGenImage('assets/icons/google.png');
+
+  /// File path: assets/icons/info.png
+  AssetGenImage get info => const AssetGenImage('assets/icons/info.png');
+
+  /// File path: assets/icons/instagram.png
+  AssetGenImage get instagram =>
+      const AssetGenImage('assets/icons/instagram.png');
+
   /// File path: assets/icons/location.png
   AssetGenImage get location =>
       const AssetGenImage('assets/icons/location.png');
@@ -43,8 +57,35 @@ class $AssetsIconsGen {
   AssetGenImage get settings =>
       const AssetGenImage('assets/icons/settings.png');
 
+  /// File path: assets/icons/share.png
+  AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
+
+  /// File path: assets/icons/thumbs-up.png
+  AssetGenImage get thumbsUp =>
+      const AssetGenImage('assets/icons/thumbs-up.png');
+
   /// File path: assets/icons/tick.png
   AssetGenImage get tick => const AssetGenImage('assets/icons/tick.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        bookmarkFill,
+        bookmark,
+        car,
+        close,
+        dollar,
+        facebook,
+        google,
+        info,
+        instagram,
+        location,
+        logout,
+        search,
+        settings,
+        share,
+        thumbsUp,
+        tick
+      ];
 }
 
 class $AssetsImagesGen {
@@ -52,6 +93,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/img.jpg
   AssetGenImage get img => const AssetGenImage('assets/images/img.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [img];
 }
 
 class Assets {
@@ -118,6 +162,8 @@ class AssetGenImage {
       cacheHeight: cacheHeight,
     );
   }
+
+  ImageProvider provider() => AssetImage(_assetName);
 
   String get path => _assetName;
 

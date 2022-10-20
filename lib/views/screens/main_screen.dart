@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/color.dart';
-import 'package:park_app/constant/string.dart';
+import 'package:park_app/constant/colors.dart';
+import 'package:park_app/constant/strings.dart';
 import 'package:park_app/views/screens/single_park_screen.dart';
 
 import '../../constant/component.dart';
@@ -16,29 +16,33 @@ class MainScreen extends StatelessWidget {
     // var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.backGroundColor,
+        backgroundColor: SolidColors.blueColor,
         //? appbar
-        // appBar: AppBar(
-        //   elevation: 0,
-        //   backgroundColor: SolidColors.backGroundAppBarColor,
-        //   title: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //     children: [
-        //       IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-        //       const Text(
-        //         'سیدمحمد رضاتوفیقی',
-        //         style: TextStyle(
-        //             color: Colors.white,
-        //             fontWeight: FontWeight.w100,
-        //             fontSize: 16),
-        //       ),
-        //       const CircleAvatar(
-        //         backgroundColor: Colors.blueAccent,
-        //         child: Text('م'),
-        //       ),
-        //     ],
-        //   ),
-        // ),
+        appBar: AppBar(
+          backgroundColor: SolidColors.backGroundAppBarColor,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                  )),
+              const Text(
+                'سیدمحمد رضاتوفیقی',
+                style: TextStyle(
+                    fontWeight: FontWeight.w100,
+                    fontSize: 16,
+                    color: Colors.black),
+              ),
+              const CircleAvatar(
+                backgroundColor: Colors.blueAccent,
+                child: Text('م'),
+              ),
+            ],
+          ),
+        ),
 
         //? body
         body: Padding(
@@ -48,27 +52,6 @@ class MainScreen extends StatelessWidget {
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: Get.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.menu)),
-                      const Text(
-                        'سیدمحمد رضاتوفیقی',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w100,
-                            fontSize: 16),
-                      ),
-                      const CircleAvatar(
-                        backgroundColor: Colors.blueAccent,
-                        child: Text('م'),
-                      ),
-                    ],
-                  ),
-                ),
                 textWelcomUser(),
                 textFieldSearch(),
                 Container(

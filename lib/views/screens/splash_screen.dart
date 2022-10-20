@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/color.dart';
+import 'package:park_app/constant/colors.dart';
 import 'package:park_app/controllers/register_controller.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Get.find<RegisterController>().checkFirstSeen2();
+      Get.find<RegisterController>().checkFirstSeen();
     });
   }
 

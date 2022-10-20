@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'color.dart';
+import 'colors.dart';
 
 Widget rowTextAndButton(String text, String textButton, Function() onPressed) {
   return Padding(

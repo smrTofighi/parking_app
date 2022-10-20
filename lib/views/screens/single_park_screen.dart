@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/color.dart';
+import 'package:park_app/constant/colors.dart';
 
-import '../../constant/string.dart';
+import '../../constant/strings.dart';
 import '../../gen/assets.gen.dart';
 
 class SingleParkScreen extends StatelessWidget {

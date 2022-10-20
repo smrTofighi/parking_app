@@ -1,3 +1,5 @@
 class StorageKey {
-  static String loginUser = 'loginUser';
+  static String seen = 'seen';
+  static String token = 'token';
+  static String isLogin = 'isLogin';
 }
