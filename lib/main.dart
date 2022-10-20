@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:park_app/views/screens/main_screen.dart';
-import 'package:park_app/views/screens/onboarding_screen.dart';
+import 'package:park_app/bindings/binding.dart';
+import 'package:park_app/views/screens/splash_screen.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -27,8 +27,9 @@ class MyApp extends StatelessWidget {
         Locale('fa', 'IR'), // Farsi, no country code
       ],
       locale: const Locale('fa', 'IR'),
+      initialBinding: RegisterBinding(),
       defaultTransition: Transition.rightToLeft,
-      home: const OnBoardingScreen(),
+      home: const SplashScreen(),
     );
   }
 }

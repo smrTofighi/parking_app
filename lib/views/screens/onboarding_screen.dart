@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:park_app/constant/storage.dart';
 import 'package:park_app/views/screens/intro/intro_screen_1.dart';
 import 'package:park_app/views/screens/main_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -15,6 +17,12 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  @override
+  void initState() {
+    super.initState();
+    GetStorage().write(StorageKey.loginUser, false);
+  }
+
   //^ controller to keep track of witch page we're on
   final PageController _controller = PageController();
   bool onLastPage = false;
