@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/constant/styles/textstyles.dart';
-
+import 'package:park_app/constant/styles/text_styles.dart';
 import '../colors.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
-      fontFamily: 'Samim',
-      inputDecorationTheme: inputDecoration(),
-      elevatedButtonTheme: elevatedButtonTheme());
+    fontFamily: 'Samim',
+    inputDecorationTheme: inputDecoration(),
+    elevatedButtonTheme: elevatedButtonTheme(),
+    textButtonTheme: textButtomTheme(),
+  );
+}
+
+TextButtonThemeData textButtomTheme() {
+  return TextButtonThemeData(
+    style: ButtonStyle(
+      textStyle: MaterialStateProperty.all(
+        const TextStyle(fontSize: 14),
+      ),
+      foregroundColor: MaterialStateProperty.all(SolidColors.textGreyColor),
+    ),
+  );
 }
 
 ElevatedButtonThemeData elevatedButtonTheme() {

@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:park_app/constant/colors.dart';
+import 'package:park_app/constant/component.dart';
 import 'package:park_app/constant/storage.dart';
 import 'package:park_app/constant/strings.dart';
+import 'package:park_app/constant/styles/text_styles.dart';
 import 'package:park_app/views/screens/main_screen.dart';
 import 'package:park_app/views/screens/register/signup_screen.dart';
+import 'package:park_app/views/screens/register/widgets/text_widget.dart';
 import 'package:park_app/views/widgets/elevated_button_widget.dart';
+import 'package:park_app/views/widgets/text_button_widget.dart';
 import 'package:park_app/views/widgets/textfield_widget.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -23,11 +27,11 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            helloAgainText(),
+            helloText(text: ConstantStrings.helloAgainText),
             const SizedBox(
               height: 10.0,
             ),
-            messageForUserText(),
+            messageForUserText(text: ConstantStrings.textForUserFromLoginText),
             const SizedBox(
               height: 16.0,
             ),
@@ -39,37 +43,19 @@ class LoginScreen extends StatelessWidget {
             recoveryPasswordTextButton(),
             loginButton(),
             const Spacer(),
-            createAccountRowButton(),
+            rowTextAndButton(
+              ConstantStrings.youDontHaveAnyAccountText,
+              ConstantStrings.createOneText,
+              () {
+                Get.to(const SignupScreen());
+              },
+            ),
             const SizedBox(
               height: 60,
             )
           ],
         ),
       ),
-    );
-  }
-
-  Row createAccountRowButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          ConstantStrings.youDontHaveAnyAccountText,
-          style: TextStyle(fontSize: 13, color: Colors.grey[700]),
-        ),
-        TextButton(
-          onPressed: () {
-            Get.to(const SignupScreen());
-          },
-          style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 14),
-            ),
-            foregroundColor: MaterialStateProperty.all(SolidColors.blueColor),
-          ),
-          child: const Text(ConstantStrings.createOneText),
-        )
-      ],
     );
   }
 
@@ -95,14 +81,8 @@ class LoginScreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(32, 16, 0, 16),
       child: Align(
         alignment: Alignment.centerLeft,
-        child: TextButton(
+        child: textButton(
           onPressed: () {},
-          style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 14),
-            ),
-            foregroundColor: MaterialStateProperty.all(Colors.grey[700]),
-          ),
           child: const Text(ConstantStrings.recoveryPasswordText),
         ),
       ),
@@ -120,33 +100,6 @@ class LoginScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 0, 32, 8),
       child: textfield(hintText: ConstantStrings.emailText),
-    );
-  }
-
-  Text messageForUserText() {
-    return Text(
-      ConstantStrings.textForUserFromLoginScreenText,
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 18,
-        color: Colors.grey[700],
-      ),
-    );
-  }
-
-  SizedBox helloAgainText() {
-    return SizedBox(
-      width: Get.width,
-      child: const Align(
-        alignment: Alignment.center,
-        child: Text(
-          ConstantStrings.helloAgainText,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-        ),
-      ),
     );
   }
 }

@@ -18,4 +18,5 @@ class SolidColors {
   static const Color redColor = Colors.redAccent;
 
   static const Color textBlackColor = Color.fromARGB(255, 24, 24, 24);
+  static const Color textGreyColor = Color.fromRGBO(97, 97, 97, 1);
 }
