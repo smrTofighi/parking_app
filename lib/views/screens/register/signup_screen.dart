@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:park_app/constant/colors.dart';
+import 'package:park_app/constant/storage.dart';
 import 'package:park_app/constant/strings.dart';
+import 'package:park_app/views/screens/main_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,18 +51,18 @@ class LoginScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          Strings.youDontHaveAnyAccountText,
+          ConstantStrings.youDontHaveAnyAccountText,
           style: TextStyle(fontSize: 13, color: Colors.grey[700]),
         ),
         TextButton(
           onPressed: () {},
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 13),
+              const TextStyle(fontSize: 14),
             ),
             foregroundColor: MaterialStateProperty.all(SolidColors.blueColor),
           ),
-          child: const Text(Strings.createOneText),
+          child: const Text(ConstantStrings.createOneText),
         )
       ],
     );
@@ -72,12 +75,15 @@ class LoginScreen extends StatelessWidget {
         width: Get.width,
         height: 50,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.offAll(const MainScreen());
+            GetStorage().write(StorageKey.isLogin, true);
+          },
           style: ButtonStyle(
             backgroundColor:
                 MaterialStateProperty.all(SolidColors.backGroundColor),
           ),
-          child: const Text(Strings.loginText),
+          child: const Text(ConstantStrings.loginText),
         ),
       ),
     );
@@ -92,11 +98,11 @@ class LoginScreen extends StatelessWidget {
           onPressed: () {},
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 13),
+              const TextStyle(fontSize: 14),
             ),
             foregroundColor: MaterialStateProperty.all(Colors.grey[700]),
           ),
-          child: const Text(Strings.recoveryPasswordText),
+          child: const Text(ConstantStrings.recoveryPasswordText),
         ),
       ),
     );
@@ -128,7 +134,7 @@ class LoginScreen extends StatelessWidget {
 
   Text messageForUserText() {
     return Text(
-      Strings.textForUserFromLoginScreenText,
+      ConstantStrings.textForUserFromLoginScreenText,
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 18,
@@ -143,7 +149,7 @@ class LoginScreen extends StatelessWidget {
       child: const Align(
         alignment: Alignment.center,
         child: Text(
-          Strings.helloAgainText,
+          ConstantStrings.helloAgainText,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,

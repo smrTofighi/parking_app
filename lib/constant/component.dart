@@ -16,9 +16,8 @@ Widget rowTextAndButton(String text, String textButton, Function() onPressed) {
           child: ElevatedButton(
             onPressed: onPressed,
             style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(SolidColors.blueColor),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              backgroundColor: MaterialStateProperty.all(SolidColors.blueColor),
+              shape: MaterialStateProperty.all(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0),
                 ),

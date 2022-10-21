@@ -136,7 +136,7 @@ class SingleParkScreen extends StatelessWidget {
                               height: 14,
                             ),
                             const Text(
-                              Strings.totalSpaceForCars,
+                              ConstantStrings.totalSpaceForCars,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 14),
                             ),

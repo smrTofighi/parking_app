@@ -3,9 +3,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:park_app/bindings/binding.dart';
-import 'package:park_app/views/screens/login_screen.dart';
-import 'package:park_app/views/screens/main_screen.dart';
+import 'package:park_app/views/screens/register/login_screen.dart';
 import 'package:park_app/views/screens/splash_screen.dart';
+
+import 'constant/themes/light_theme.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -19,25 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Samim',
-        inputDecorationTheme: const InputDecorationTheme(
-          fillColor: Colors.white,
-          hintStyle: TextStyle(fontSize: 14),
-          contentPadding:
-              EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0, right: 14),
-          filled: true,
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
-        ),
-      ),
+      theme: lightTheme(),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

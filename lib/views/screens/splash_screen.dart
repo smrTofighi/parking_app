@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:park_app/constant/colors.dart';
+import 'package:park_app/constant/strings.dart';
 import 'package:park_app/controllers/register_controller.dart';
+import 'package:park_app/views/widgets/loading_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,14 +29,35 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              SpinKitWave(
-                color: Colors.white,
-                size: 32,
-              )
+            children: [
+              parkingText(),
+              const SizedBox(
+                height: 16,
+              ),
+              loading(color: Colors.white, size: 32),
             ],
           ),
         ),
+        bottomNavigationBar: vornaCodeText(),
+      ),
+    );
+  }
+
+  Text parkingText() {
+    return const Text(
+      ConstantStrings.prakingText,
+      style: TextStyle(
+          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+    );
+  }
+
+  Padding vornaCodeText() {
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Text(
+        'توسعه یافته توسط ورناکد',
+        style: TextStyle(color: Colors.white, fontSize: 12),
+        textAlign: TextAlign.center,
       ),
     );
   }
