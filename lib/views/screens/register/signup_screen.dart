@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:park_app/constant/colors.dart';
+import 'package:park_app/constant/component.dart';
 import 'package:park_app/constant/storage.dart';
 import 'package:park_app/constant/strings.dart';
 import 'package:park_app/views/screens/main_screen.dart';
+import 'package:park_app/views/screens/register/login_screen.dart';
+import 'package:park_app/views/screens/register/widgets/text_widget.dart';
+import 'package:park_app/views/widgets/elevated_button_widget.dart';
 import 'package:park_app/views/widgets/textfield_widget.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -21,18 +25,23 @@ class SignupScreen extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            helloAgainText(),
+            helloText(text: ConstantStrings.fristHelloText),
             const SizedBox(
               height: 10.0,
             ),
-            messageForUserText(),
+            messageForUserText(text: ConstantStrings.textForUserFromSignupText),
             userNameTextField(),
             emailTextField(),
             passwordTextField(),
-            recoveryPasswordTextButton(),
-            loginButton(),
+            signupButton(),
             const Spacer(),
-            createAccountRowButton(),
+            rowTextAndButton(
+              ConstantStrings.youDoHaveAnyAccountText,
+              ConstantStrings.comeInText,
+              () {
+                Get.to(const LoginScreen());
+              },
+            ),
             const SizedBox(
               height: 60,
             )
@@ -49,65 +58,18 @@ class SignupScreen extends StatelessWidget {
     );
   }
 
-  Row createAccountRowButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          ConstantStrings.youDontHaveAnyAccountText,
-          style: TextStyle(fontSize: 13, color: Colors.grey[700]),
-        ),
-        TextButton(
-          onPressed: () {},
-          style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 14),
-            ),
-            foregroundColor: MaterialStateProperty.all(SolidColors.blueColor),
-          ),
-          child: const Text(ConstantStrings.createOneText),
-        )
-      ],
-    );
-  }
-
-  Padding loginButton() {
+  Padding signupButton() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 8, 32, 36),
       child: SizedBox(
-        width: Get.width,
-        height: 50,
-        child: ElevatedButton(
-          onPressed: () {
-            Get.offAll(const MainScreen());
-            GetStorage().write(StorageKey.isLogin, true);
-          },
-          style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all(SolidColors.backGroundColor),
-          ),
-          child: const Text(ConstantStrings.loginText),
-        ),
-      ),
-    );
-  }
-
-  Padding recoveryPasswordTextButton() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 16, 0, 16),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: TextButton(
-          onPressed: () {},
-          style: ButtonStyle(
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 14),
-            ),
-            foregroundColor: MaterialStateProperty.all(Colors.grey[700]),
-          ),
-          child: const Text(ConstantStrings.recoveryPasswordText),
-        ),
-      ),
+          width: Get.width,
+          height: 50,
+          child: elevatedButton(
+              onPressed: () {
+                Get.offAll(const MainScreen());
+                GetStorage().write(StorageKey.isLogin, true);
+              },
+              child: const Text(ConstantStrings.singupText))),
     );
   }
 
@@ -122,33 +84,6 @@ class SignupScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 0, 32, 8),
       child: textfield(hintText: ConstantStrings.emailText),
-    );
-  }
-
-  Text messageForUserText() {
-    return Text(
-      ConstantStrings.textForUserFromLoginScreenText,
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 18,
-        color: Colors.grey[700],
-      ),
-    );
-  }
-
-  SizedBox helloAgainText() {
-    return SizedBox(
-      width: Get.width,
-      child: const Align(
-        alignment: Alignment.center,
-        child: Text(
-          ConstantStrings.helloAgainText,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-        ),
-      ),
     );
   }
 }
