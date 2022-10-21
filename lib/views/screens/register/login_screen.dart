@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:park_app/constant/colors.dart';
 import 'package:park_app/constant/component.dart';
 import 'package:park_app/constant/storage.dart';
 import 'package:park_app/constant/strings.dart';
-import 'package:park_app/constant/styles/text_styles.dart';
 import 'package:park_app/views/screens/main_screen.dart';
 import 'package:park_app/views/screens/register/signup_screen.dart';
 import 'package:park_app/views/screens/register/widgets/text_widget.dart';
