@@ -5,6 +5,7 @@ import 'package:park_app/constant/colors.dart';
 import 'package:park_app/constant/storage.dart';
 import 'package:park_app/constant/strings.dart';
 import 'package:park_app/views/screens/main_screen.dart';
+import 'package:park_app/views/widgets/textfield_widget.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -25,13 +26,8 @@ class SignupScreen extends StatelessWidget {
               height: 10.0,
             ),
             messageForUserText(),
-            const SizedBox(
-              height: 16.0,
-            ),
+            userNameTextField(),
             emailTextField(),
-            const SizedBox(
-              height: 16.0,
-            ),
             passwordTextField(),
             recoveryPasswordTextButton(),
             loginButton(),
@@ -43,6 +39,13 @@ class SignupScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Padding userNameTextField() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(32, 16, 32, 24),
+      child: textfield(hintText: 'نام'),
     );
   }
 
@@ -109,26 +112,16 @@ class SignupScreen extends StatelessWidget {
   }
 
   Padding passwordTextField() {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: 'رمز عبور',
-          hintStyle: TextStyle(fontSize: 14),
-        ),
-      ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(32, 16, 32, 0),
+      child: textfield(hintText: ConstantStrings.passwordText),
     );
   }
 
   Padding emailTextField() {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(32, 0, 32, 8),
-      child: TextField(
-        decoration: InputDecoration(
-          hintStyle: TextStyle(fontSize: 14),
-          hintText: 'ایمیل',
-        ),
-      ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(32, 0, 32, 8),
+      child: textfield(hintText: ConstantStrings.emailText),
     );
   }
 

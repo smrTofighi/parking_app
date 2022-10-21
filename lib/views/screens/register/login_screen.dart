@@ -6,6 +6,7 @@ import 'package:park_app/constant/storage.dart';
 import 'package:park_app/constant/strings.dart';
 import 'package:park_app/views/screens/main_screen.dart';
 import 'package:park_app/views/screens/register/signup_screen.dart';
+import 'package:park_app/views/widgets/elevated_button_widget.dart';
 import 'package:park_app/views/widgets/textfield_widget.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -78,15 +79,11 @@ class LoginScreen extends StatelessWidget {
       child: SizedBox(
         width: Get.width,
         height: 50,
-        child: ElevatedButton(
+        child: elevatedButton(
           onPressed: () {
             Get.offAll(const MainScreen());
             GetStorage().write(StorageKey.isLogin, true);
           },
-          style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all(SolidColors.backGroundColor),
-          ),
           child: const Text(ConstantStrings.loginText),
         ),
       ),
