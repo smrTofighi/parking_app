@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'colors.dart';
 
-Widget rowTextAndButton(String text, String textButton, Function() onPressed) {
+import '../../core/values/colors.dart';
+
+Widget rowTextAndElevatedButton(
+    String text, String textButton, Function() onPressed) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
     child: Row(

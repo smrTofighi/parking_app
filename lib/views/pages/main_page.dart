@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/colors.dart';
-import 'package:park_app/constant/strings.dart';
-import 'package:park_app/views/screens/single_park_screen.dart';
-
-import '../../constant/component.dart';
+import 'package:park_app/views/pages/single_park_page.dart';
+import '../../core/values/colors.dart';
+import '../../core/values/strings.dart';
 import '../../gen/assets.gen.dart';
 import '../../models/park_model.dart';
+import '../widgets/row_text_and_button.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +62,13 @@ class MainScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      rowTextAndButton(
+                      rowTextAndElevatedButton(
                         ConstantStrings.bestText,
                         ConstantStrings.seeAllText,
                         () {},
                       ),
                       parkingListItem(5),
-                      rowTextAndButton(
+                      rowTextAndElevatedButton(
                         ConstantStrings.nearFromYou,
                         ConstantStrings.seeAllText,
                         () {},
@@ -77,7 +76,7 @@ class MainScreen extends StatelessWidget {
                       parkingListItem(
                         5,
                       ),
-                      rowTextAndButton(
+                      rowTextAndElevatedButton(
                         'جدیدترین ها',
                         ConstantStrings.seeAllText,
                         () {},
@@ -159,7 +158,7 @@ class MainScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: (() {
-              Get.to(SingleParkScreen(listPark: parkList, index: index));
+              Get.to(SingleParkPage(listPark: parkList, index: index));
             }),
             child: Container(
               margin: EdgeInsets.fromLTRB(

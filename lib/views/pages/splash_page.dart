@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/colors.dart';
-import 'package:park_app/constant/strings.dart';
 import 'package:park_app/controllers/register_controller.dart';
 import 'package:park_app/views/widgets/loading_widget.dart';
+import '../../core/values/colors.dart';
+import '../../core/values/strings.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();

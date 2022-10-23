@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/strings.dart';
-import 'package:park_app/views/screens/onboarding/intro/intro_screen_1.dart';
-import 'package:park_app/views/screens/onboarding/widgets/onboarding_textbutton_widget.dart';
-import 'package:park_app/views/screens/register/login_screen.dart';
+import 'package:park_app/views/pages/onboarding/intro/intro_page_1.dart';
+import 'package:park_app/views/pages/onboarding/widgets/onboarding_textbutton_widget.dart';
+import 'package:park_app/views/pages/register/login_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'intro/intro_screen_2.dart';
-import 'intro/intro_screen_3.dart';
+import '../../../core/values/strings.dart';
+import 'intro/intro_page_2.dart';
+import 'intro/intro_page_3.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+class OnBoardingPage extends StatefulWidget {
+  const OnBoardingPage({super.key});
 
   @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+  State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class _OnBoardingPageState extends State<OnBoardingPage> {
   //^ controller to keep track of witch page we're on
   final PageController _controller = PageController();
   bool onLastPage = false;
@@ -34,9 +34,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               },
               reverse: true,
               children: const [
-                IntroScreen1(),
-                IntroScreen2(),
-                IntroScreen3(),
+                IntroPage1(),
+                IntroPage2(),
+                IntroPage3(),
               ],
             ),
             smoothPageWithTextButtons(),
@@ -55,7 +55,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           onLastPage
               ? onboardingTextButton(
                   onPressed: () {
-                    Get.off(const LoginScreen());
+                    Get.off(const LoginPage());
                   },
                   child: const Text(ConstantStrings.letsGoText),
                 )

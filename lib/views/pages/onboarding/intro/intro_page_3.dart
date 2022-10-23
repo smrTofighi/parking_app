@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class IntroScreen1 extends StatelessWidget {
-  const IntroScreen1({super.key});
+class IntroPage3 extends StatelessWidget {
+  const IntroPage3({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.redAccent,
+      color: Colors.greenAccent,
       child: const Center(
-        child: Text('Screen 1'),
+        child: Text('Screen 3'),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/constant/colors.dart';
+import '../values/colors.dart';
 
 class ConstantTextStyles {
   static const TextStyle hintStyle =

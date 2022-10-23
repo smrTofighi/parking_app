@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/colors.dart';
-
-import '../../constant/strings.dart';
+import '../../core/values/colors.dart';
+import '../../core/values/strings.dart';
 import '../../gen/assets.gen.dart';
 
-class SingleParkScreen extends StatelessWidget {
-  const SingleParkScreen(
-      {Key? key, required this.listPark, required this.index})
+class SingleParkPage extends StatelessWidget {
+  const SingleParkPage({Key? key, required this.listPark, required this.index})
       : super(key: key);
   final List listPark;
   final int index;

@@ -3,9 +3,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:park_app/bindings/binding.dart';
-import 'package:park_app/views/screens/splash_screen.dart';
+import 'package:park_app/views/pages/splash_page.dart';
 
-import 'constant/themes/light_theme.dart';
+import 'core/themes/light_theme.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('fa', 'IR'),
       initialBinding: RegisterBinding(),
       defaultTransition: Transition.rightToLeft,
-      home: const SplashScreen(),
+      home: const SplashPage(),
     );
   }
 }

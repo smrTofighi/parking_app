@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:park_app/constant/styles/text_styles.dart';
+
+import '../../../../core/styles/text_styles.dart';
 
 Widget helloText({required text}) {
   return SizedBox(

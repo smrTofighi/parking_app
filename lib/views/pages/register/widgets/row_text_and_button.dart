@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/constant/styles/button_styles.dart';
-import '../../../../constant/styles/text_styles.dart';
+
+import '../../../../core/styles/button_styles.dart';
+import '../../../../core/styles/text_styles.dart';
 
 Row rowTextAndButton(
     {required String text,

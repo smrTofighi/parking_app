@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:park_app/constant/component.dart';
-import 'package:park_app/constant/storage.dart';
-import 'package:park_app/constant/strings.dart';
-import 'package:park_app/views/screens/main_screen.dart';
-import 'package:park_app/views/screens/register/login_screen.dart';
-import 'package:park_app/views/screens/register/widgets/text_widget.dart';
+import 'package:park_app/core/values/storage.dart';
+import 'package:park_app/views/pages/main_page.dart';
+import 'package:park_app/views/pages/register/login_page.dart';
+import 'package:park_app/views/pages/register/widgets/row_text_and_button.dart';
+import 'package:park_app/views/pages/register/widgets/text_widget.dart';
 import 'package:park_app/views/widgets/elevated_button_widget.dart';
 import 'package:park_app/views/widgets/textfield_widget.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+import '../../../core/values/strings.dart';
+
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +36,11 @@ class SignupScreen extends StatelessWidget {
             signupButton(),
             const Spacer(),
             rowTextAndButton(
-              ConstantStrings.youDoHaveAnyAccountText,
-              ConstantStrings.comeInText,
-              () {
-                Get.to(const LoginScreen());
+              text: ConstantStrings.youDoHaveAnyAccountText,
+              onPressed: () {
+                Get.to(const LoginPage());
               },
+              textButton: ConstantStrings.comeInText,
             ),
             const SizedBox(
               height: 60,
@@ -59,22 +60,24 @@ class SignupScreen extends StatelessWidget {
 
   Padding signupButton() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 8, 32, 36),
+      padding: const EdgeInsets.fromLTRB(32, 24, 32, 36),
       child: SizedBox(
-          width: Get.width,
-          height: 50,
-          child: elevatedButton(
-              onPressed: () {
-                Get.offAll(const MainScreen());
-                GetStorage().write(StorageKey.isLogin, true);
-              },
-              child: const Text(ConstantStrings.singupText))),
+        width: Get.width,
+        height: 50,
+        child: elevatedButton(
+          onPressed: () {
+            Get.offAll(const MainPage());
+            GetStorage().write(StorageKey.isLogin, true);
+          },
+          child: const Text(ConstantStrings.singupText),
+        ),
+      ),
     );
   }
 
   Padding passwordTextField() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 16, 32, 0),
+      padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
       child: textfield(hintText: ConstantStrings.passwordText),
     );
   }

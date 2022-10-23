@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:park_app/constant/component.dart';
-import 'package:park_app/constant/storage.dart';
-import 'package:park_app/constant/strings.dart';
-import 'package:park_app/views/screens/main_screen.dart';
-import 'package:park_app/views/screens/register/signup_screen.dart';
-import 'package:park_app/views/screens/register/widgets/text_widget.dart';
+import 'package:park_app/core/values/storage.dart';
+import 'package:park_app/views/pages/main_page.dart';
+import 'package:park_app/views/pages/register/signup_page.dart';
+import 'package:park_app/views/pages/register/widgets/row_text_and_button.dart';
+import 'package:park_app/views/pages/register/widgets/text_widget.dart';
 import 'package:park_app/views/widgets/elevated_button_widget.dart';
 import 'package:park_app/views/widgets/text_button_widget.dart';
 import 'package:park_app/views/widgets/textfield_widget.dart';
+import '../../../core/values/strings.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +42,11 @@ class LoginScreen extends StatelessWidget {
             loginButton(),
             const Spacer(),
             rowTextAndButton(
-              ConstantStrings.youDontHaveAnyAccountText,
-              ConstantStrings.createOneText,
-              () {
-                Get.to(const SignupScreen());
+              text: ConstantStrings.youDontHaveAnyAccountText,
+              onPressed: () {
+                Get.to(const SignupPage());
               },
+              textButton: ConstantStrings.createOneText,
             ),
             const SizedBox(
               height: 60,
@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
         height: 50,
         child: elevatedButton(
           onPressed: () {
-            Get.offAll(const MainScreen());
+            Get.offAll(const MainPage());
             GetStorage().write(StorageKey.isLogin, true);
           },
           child: const Text(ConstantStrings.loginText),

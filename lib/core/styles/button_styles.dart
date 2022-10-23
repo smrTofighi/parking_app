@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/constant/styles/text_styles.dart';
+import 'package:park_app/core/styles/text_styles.dart';
 
-import '../colors.dart';
+import '../values/colors.dart';
 
 class ConstantButtonStyle {
   static ButtonStyle blueTextButtonStyle = ButtonStyle(

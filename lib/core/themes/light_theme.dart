@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/constant/styles/text_styles.dart';
-import '../colors.dart';
+
+import '../styles/text_styles.dart';
+import '../values/colors.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
