@@ -57,7 +57,7 @@ class SingleParkPage extends StatelessWidget {
                             style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: SolidColors.blueColor),
+                                color: SolidColors.primery),
                           ),
                         ],
                       ),
@@ -71,7 +71,7 @@ class SingleParkPage extends StatelessWidget {
                             children: [
                               ImageIcon(
                                 AssetImage(Assets.icons.location.path),
-                                color: SolidColors.blueColor,
+                                color: SolidColors.primery,
                                 size: 16,
                               ),
                               const SizedBox(
@@ -80,7 +80,7 @@ class SingleParkPage extends StatelessWidget {
                               Text(
                                 listPark[index].location!,
                                 style: const TextStyle(
-                                    fontSize: 13, color: SolidColors.blueColor),
+                                    fontSize: 13, color: SolidColors.primery),
                               )
                             ],
                           ),
@@ -121,7 +121,7 @@ class SingleParkPage extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(28, 0, 28, 24),
                   height: size.height / 8,
                   width: Get.width,
-                  decoration: const BoxDecoration(color: SolidColors.blueColor),
+                  decoration: const BoxDecoration(color: SolidColors.primery),
                   child: SizedBox(
                     height: Get.height,
                     child: Row(

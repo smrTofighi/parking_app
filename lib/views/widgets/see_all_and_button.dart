@@ -5,8 +5,8 @@ import '../../core/values/colors.dart';
 
 class SeeAllAndButton extends StatelessWidget {
   const SeeAllAndButton(
-      {super.key, required this.textButton, required this.onPressed});
-  final String textButton;
+      {super.key, required this.text, required this.onPressed});
+  final String text;
   final Function() onPressed;
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,8 @@ class SeeAllAndButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            MyString.seeAll,
+          Text(
+            text,
             style: MyTextStyle.seeAllText,
           ),
           SizedBox(
@@ -24,17 +24,25 @@ class SeeAllAndButton extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onPressed,
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(SolidColors.blueColor),
+                backgroundColor: MaterialStateProperty.all(SolidColors.primery),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
                 ),
+                elevation: MaterialStateProperty.resolveWith(
+                  (states) {
+                    if (states.contains(MaterialState.pressed)) {
+                      return 0;
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
               ),
-              child: Text(
-                textButton,
-                style: const TextStyle(fontSize: 10),
+              child: const Text(
+                MyString.seeAll,
+                style: TextStyle(fontSize: 10, color: Colors.white),
               ),
             ),
           )

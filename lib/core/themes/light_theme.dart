@@ -18,7 +18,7 @@ TextButtonThemeData textButtomTheme() {
       textStyle: MaterialStateProperty.all(
         const TextStyle(fontSize: 14),
       ),
-      foregroundColor: MaterialStateProperty.all(SolidColors.textGreyColor),
+      foregroundColor: MaterialStateProperty.all(SolidColors.textGrey),
     ),
   );
 }
@@ -26,13 +26,13 @@ TextButtonThemeData textButtomTheme() {
 ElevatedButtonThemeData elevatedButtonTheme() {
   return ElevatedButtonThemeData(
     style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(SolidColors.themeColor)),
+        backgroundColor: MaterialStateProperty.all(SolidColors.primery)),
   );
 }
 
 InputDecorationTheme inputDecoration() {
   return const InputDecorationTheme(
-    fillColor: Colors.white,
+    fillColor: SolidColors.textFieldBackGround,
     hintStyle: MyTextStyle.hintStyle,
     contentPadding:
         EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0, right: 14),

@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.backGroundColor,
+        backgroundColor: SolidColors.backGround,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -8,7 +8,7 @@ class MyButtonStyle {
     textStyle: MaterialStateProperty.all(
       MyTextStyle.buttonTextStyle,
     ),
-    foregroundColor: MaterialStateProperty.all(SolidColors.themeColor),
+    foregroundColor: MaterialStateProperty.all(SolidColors.primery),
   );
 
   static ButtonStyle whiteTextButton = ButtonStyle(

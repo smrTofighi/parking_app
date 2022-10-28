@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:park_app/core/values/dimens.dart';
+import 'package:park_app/core/values/icons.dart';
 import 'package:park_app/views/pages/single_park_page.dart';
 import 'package:park_app/views/widgets/floating_action_button.dart';
 import '../../core/values/colors.dart';
@@ -13,22 +15,23 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.blueColor,
+        backgroundColor: SolidColors.backGround,
         //? appbar
         appBar: AppBar(
-          backgroundColor: SolidColors.backGroundAppBarColor,
+          backgroundColor: SolidColors.backGroundAppBar,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu,
-                    color: Colors.black,
-                  )),
+                onPressed: () {},
+                icon: ImageIcon(
+                  MyIcon.menu.image,
+                  color: Colors.black,
+                  size: Dimens.icon,
+                ),
+              ),
               const Text(
                 'سیدمحمد رضاتوفیقی',
                 style: TextStyle(
@@ -36,9 +39,13 @@ class MainPage extends StatelessWidget {
                     fontSize: 16,
                     color: Colors.black),
               ),
-              const CircleAvatar(
-                backgroundColor: Colors.blueAccent,
-                child: Text('م'),
+              IconButton(
+                onPressed: () {},
+                icon: ImageIcon(
+                  MyIcon.search.image,
+                  color: Colors.black,
+                  size: Dimens.icon,
+                ),
               ),
             ],
           ),
@@ -52,35 +59,35 @@ class MainPage extends StatelessWidget {
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                textWelcomUser(),
-                textFieldSearch(),
+                const WelcomeUserText(),
+                // const TextFieldSearch(),
                 Container(
                   margin: const EdgeInsets.fromLTRB(8, 32, 8, 0),
                   width: Get.width,
                   decoration: const BoxDecoration(
-                    color: SolidColors.screenColor,
+                    color: SolidColors.greyBackGround,
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                   child: Column(
                     children: [
                       SeeAllAndButton(
-                        textButton: MyString.best,
+                        text: MyString.best,
                         onPressed: () {},
                       ),
-                      parkingListItem(5),
+                      const ParkingList(count: 4),
                       SeeAllAndButton(
-                        textButton: MyString.nearFromYou,
+                        text: MyString.nearFromYou,
                         onPressed: () {},
                       ),
-                      parkingListItem(
-                        5,
+                      const ParkingList(
+                        count: 5,
                       ),
                       SeeAllAndButton(
-                        textButton: MyString.newest,
+                        text: MyString.newest,
                         onPressed: () {},
                       ),
-                      parkingListItem(
-                        parkList.length,
+                      ParkingList(
+                        count: parkList.length,
                       ),
                       const SizedBox(
                         height: 60,
@@ -100,48 +107,16 @@ class MainPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget textFieldSearch() {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(32, 24, 32, 8),
-      child: TextField(
-        style: TextStyle(fontSize: 14),
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          hintText: 'هر جایی رو میخوای جستجو کن (:',
-          hintStyle: TextStyle(fontSize: 14),
-          contentPadding:
-              EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0, right: 14),
-          filled: true,
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
-        ),
-      ),
-    );
-  }
+//? Widgets
 
-  Widget textWelcomUser() {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(0, 16, 32, 8),
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Text(
-          '${MyString.goodAfternon} محمد جان',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w100, fontSize: 16),
-        ),
-      ),
-    );
-  }
+class ParkingList extends StatelessWidget {
+  const ParkingList({super.key, required this.count});
+  final int count;
 
-  Widget parkingListItem(int count) {
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       height: 160,
       child: ListView.builder(
@@ -155,17 +130,22 @@ class MainPage extends StatelessWidget {
                   index == parkList.length - 1 ? 24 : 0, 20, 24, 20),
               height: 120,
               padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
-              width: Get.width / 1.4,
+              width: Dimens.width / 1.4,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),
-                color: SolidColors.containerColor,
+                color: SolidColors.greyBackGround,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    blurRadius: 7,
-                  )
+                      color: Colors.grey.shade500,
+                      blurRadius: 15,
+                      offset: const Offset(5, 5)),
+                  const BoxShadow(
+                    color: Colors.white,
+                    blurRadius: 15,
+                    offset: Offset(-5, -5),
+                  ),
                 ],
               ),
               child: Column(
@@ -177,7 +157,7 @@ class MainPage extends StatelessWidget {
                       ImageIcon(
                         AssetImage(Assets.icons.car.path),
                         size: 28,
-                        color: SolidColors.blueColor,
+                        color: SolidColors.primery,
                       ),
                       const SizedBox(
                         width: 8,
@@ -185,7 +165,7 @@ class MainPage extends StatelessWidget {
                       Text(
                         parkList[index].name!,
                         style: const TextStyle(
-                            color: SolidColors.blueColor,
+                            color: SolidColors.primery,
                             fontWeight: FontWeight.bold),
                       )
                     ],
@@ -203,7 +183,7 @@ class MainPage extends StatelessWidget {
                       Text(
                         parkList[index].location.toString(),
                         style: const TextStyle(
-                            fontSize: 12, color: SolidColors.redColor),
+                            fontSize: 12, color: SolidColors.red),
                       ),
                     ],
                   ),
@@ -215,7 +195,7 @@ class MainPage extends StatelessWidget {
                           ImageIcon(
                             AssetImage(Assets.icons.dollar.path),
                             size: 18,
-                            color: SolidColors.greenColor,
+                            color: SolidColors.green,
                           ),
                           const SizedBox(
                             width: 4,
@@ -223,7 +203,7 @@ class MainPage extends StatelessWidget {
                           Text(
                             '${parkList[index].price} تومان',
                             style: const TextStyle(
-                                fontSize: 12, color: SolidColors.greenColor),
+                                fontSize: 12, color: SolidColors.green),
                           ),
                         ],
                       ),
@@ -235,8 +215,8 @@ class MainPage extends StatelessWidget {
                                 : Assets.icons.close.path),
                             size: 18,
                             color: parkList[index].isOpen!
-                                ? SolidColors.blueColor
-                                : SolidColors.redColor,
+                                ? SolidColors.primery
+                                : SolidColors.red,
                           ),
                           const SizedBox(
                             width: 4,
@@ -246,8 +226,8 @@ class MainPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12,
                               color: parkList[index].isOpen!
-                                  ? SolidColors.blueColor
-                                  : SolidColors.redColor,
+                                  ? SolidColors.primery
+                                  : SolidColors.red,
                             ),
                           )
                         ],
@@ -262,6 +242,43 @@ class MainPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         itemCount: count,
         scrollDirection: Axis.horizontal,
+      ),
+    );
+  }
+}
+
+class WelcomeUserText extends StatelessWidget {
+  const WelcomeUserText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(0, 28, 32, 0),
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Text(
+          '${MyString.goodAfternon} محمد جان',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w100, fontSize: 16),
+        ),
+      ),
+    );
+  }
+}
+
+class TextFieldSearch extends StatelessWidget {
+  const TextFieldSearch({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(32, 24, 32, 8),
+      child: TextField(
+        style: TextStyle(fontSize: 14),
+        decoration: InputDecoration(
+          fillColor: SolidColors.textFieldBackGround,
+          hintText: 'هر جایی رو میخوای جستجو کن (:',
+        ),
       ),
     );
   }

@@ -50,6 +50,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logout.png
   AssetGenImage get logout => const AssetGenImage('assets/icons/logout.png');
 
+  /// File path: assets/icons/menu.png
+  AssetGenImage get menu => const AssetGenImage('assets/icons/menu.png');
+
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
 
@@ -80,6 +83,7 @@ class $AssetsIconsGen {
         instagram,
         location,
         logout,
+        menu,
         search,
         settings,
         share,
