@@ -68,7 +68,7 @@ class BottomSection extends StatelessWidget {
                     Get.off(const LoginPage());
                   },
                   style: MyButtonStyle.whiteTextButton,
-                  child: const Text(MyString.letsGoText),
+                  child: const Text(MyString.letsGo),
                 )
               : TextButton(
                   onPressed: () {
@@ -77,7 +77,7 @@ class BottomSection extends StatelessWidget {
                         curve: Curves.easeIn);
                   },
                   style: MyButtonStyle.whiteTextButton,
-                  child: const Text(MyString.skipText),
+                  child: const Text(MyString.skip),
                 ),
           MySmoothPage(
             controller: controller,
@@ -88,7 +88,7 @@ class BottomSection extends StatelessWidget {
               controller.jumpToPage(2);
             },
             style: MyButtonStyle.whiteTextButton,
-            child: const Text(MyString.neverMindText),
+            child: const Text(MyString.neverMind),
           )
         ],
       ),

@@ -1,30 +1,31 @@
 class MyString {
-  static const String goodAfternonText = 'عصرت بخیر';
-  static const String bestText = 'برترین ها';
+  static const String goodAfternon = 'عصرت بخیر';
+  static const String best = 'برترین ها';
   static const String nearFromYou = 'نزدیک ترین ها';
-  static const String seeAllText = 'همه رو ببین';
-  static const String searchHintText = 'هرجایی رو میخوای جستجو کن ):';
+  static const String seeAll = 'همه رو ببین';
+  static const String searchHint = 'هرجایی رو میخوای جستجو کن ):';
   static const String totalSpaceForCars = 'فضای موجود';
-  static const String loginText = 'ورود';
-  static const String singupText = 'ثبت نام';
-  static const String neverMindText = 'بیخیال';
-  static const String letsGoText = 'بریم';
-  static const String skipText = 'ادامه';
-  static const String youDontHaveAnyAccountText = 'حساب کاربری نداری؟';
-  static const String youDoHaveAnyAccountText = 'حساب کاربری داری؟';
-  static const String createOneText = 'یکی بساز';
-  static const String comeInText = 'وارد شو';
-  static const String prakingText = 'پارکینگ';
-  static const String helloAgainText = 'سلام دوباره!';
-  static const String fristHelloText = 'سلام بفرمایید!';
-  static const String emailText = 'ایمیل';
-  static const String passwordText = 'رمز عبور';
-  static const String recoveryPasswordText = 'بازیابی رمز عبور';
-  static const String textForUserFromLoginText = '''
+  static const String login = 'ورود';
+  static const String singup = 'ثبت نام';
+  static const String neverMind = 'بیخیال';
+  static const String letsGo = 'بریم';
+  static const String skip = 'ادامه';
+  static const String youDontHaveAnyAccount = 'حساب کاربری نداری؟';
+  static const String youDoHaveAnyAccount = 'حساب کاربری داری؟';
+  static const String createOne = 'یکی بساز';
+  static const String comeIn = 'وارد شو';
+  static const String praking = 'پارکینگ';
+  static const String helloAgain = 'سلام دوباره!';
+  static const String fristHello = 'سلام بفرمایید!';
+  static const String userEmail = 'ایمیل';
+  static const String userPassword = 'رمز عبور';
+  static const String userName = 'نام کاربر';
+  static const String recoveryPassword = 'بازیابی رمز عبور';
+  static const String textForUserFromLogin = '''
 خوش اومدید
 دلمون برات تنگ شده بود
 ''';
-  static const String textForUserFromSignupText = '''
+  static const String textForUserFromSignup = '''
 خوشحالیم که ما رو انتخاب کردی
 ممنون میشیم ثبت نام کنی
 ''';

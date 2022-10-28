@@ -45,7 +45,7 @@ class _SplashPageState extends State<SplashPage> {
 
   Text parkingText() {
     return const Text(
-      MyString.prakingText,
+      MyString.praking,
       style: TextStyle(
           color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
     );

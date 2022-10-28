@@ -4,8 +4,9 @@ import 'package:get_storage/get_storage.dart';
 import 'package:park_app/core/values/storage.dart';
 import 'package:park_app/views/pages/main_page.dart';
 import 'package:park_app/views/pages/register/login_page.dart';
+import 'package:park_app/views/pages/register/widgets/big_text.dart';
 import 'package:park_app/views/pages/register/widgets/row_text_and_button.dart';
-import 'package:park_app/views/pages/register/widgets/text_widget.dart';
+import 'package:park_app/views/pages/register/widgets/medium_text.dart';
 
 import '../../../core/styles/text_styles.dart';
 import '../../../core/values/strings.dart';
@@ -24,11 +25,11 @@ class SignupPage extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            helloText(text: MyString.fristHelloText),
+            const BigText(text: MyString.fristHello),
             const SizedBox(
               height: 10.0,
             ),
-            messageForUserText(text: MyString.textForUserFromSignupText),
+            const MediumText(text: MyString.textForUserFromSignup),
             const Padding(
               padding: EdgeInsets.fromLTRB(32, 16, 32, 24),
               child: TextField(
@@ -43,7 +44,7 @@ class SignupPage extends StatelessWidget {
               child: TextField(
                 style: MyTextStyle.textFieldStyle,
                 decoration: InputDecoration(
-                  hintText: MyString.emailText,
+                  hintText: MyString.userEmail,
                 ),
               ),
             ),
@@ -52,18 +53,18 @@ class SignupPage extends StatelessWidget {
               child: TextField(
                 style: MyTextStyle.textFieldStyle,
                 decoration: InputDecoration(
-                  hintText: MyString.passwordText,
+                  hintText: MyString.userPassword,
                 ),
               ),
             ),
             signupButton(),
             const Spacer(),
-            rowTextAndButton(
-              text: MyString.youDoHaveAnyAccountText,
+            RowTextAndButton(
+              text: MyString.youDoHaveAnyAccount,
               onPressed: () {
                 Get.to(const LoginPage());
               },
-              textButton: MyString.comeInText,
+              textButton: MyString.comeIn,
             ),
             const SizedBox(
               height: 60,
@@ -78,15 +79,16 @@ class SignupPage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 24, 32, 36),
       child: SizedBox(
-          width: Get.width,
-          height: 50,
-          child: ElevatedButton(
-            onPressed: () {
-              Get.offAll(const MainPage());
-              GetStorage().write(StorageKey.isLogin, true);
-            },
-            child: const Text(MyString.singupText),
-          )),
+        width: Get.width,
+        height: 50,
+        child: ElevatedButton(
+          onPressed: () {
+            Get.offAll(const MainPage());
+            GetStorage().write(StorageKey.isLogin, true);
+          },
+          child: const Text(MyString.singup),
+        ),
+      ),
     );
   }
 }

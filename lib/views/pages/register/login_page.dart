@@ -5,8 +5,9 @@ import 'package:park_app/core/styles/text_styles.dart';
 import 'package:park_app/core/values/storage.dart';
 import 'package:park_app/views/pages/main_page.dart';
 import 'package:park_app/views/pages/register/signup_page.dart';
+import 'package:park_app/views/pages/register/widgets/big_text.dart';
 import 'package:park_app/views/pages/register/widgets/row_text_and_button.dart';
-import 'package:park_app/views/pages/register/widgets/text_widget.dart';
+import 'package:park_app/views/pages/register/widgets/medium_text.dart';
 import '../../../core/values/strings.dart';
 
 class LoginPage extends StatelessWidget {
@@ -23,53 +24,28 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            helloText(text: MyString.helloAgainText),
+            const BigText(text: MyString.helloAgain),
             const SizedBox(
               height: 10.0,
             ),
-            messageForUserText(text: MyString.textForUserFromLoginText),
+            const MediumText(text: MyString.textForUserFromLogin),
             const SizedBox(
               height: 16.0,
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(32, 0, 32, 8),
-              child: TextField(
-                style: MyTextStyle.textFieldStyle,
-                decoration: InputDecoration(
-                  hintText: MyString.emailText,
-                ),
-              ),
-            ),
+            const TextFieldEmail(),
             const SizedBox(
               height: 16.0,
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
-              child: TextField(
-                style: MyTextStyle.textFieldStyle,
-                decoration: InputDecoration(
-                  hintText: MyString.passwordText,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(32, 16, 0, 16),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(MyString.recoveryPasswordText),
-                ),
-              ),
-            ),
-            loginButton(),
+            const TextFieldPassword(),
+            const TextButtonRecovery(),
+            const LoginButton(),
             const Spacer(),
-            rowTextAndButton(
-              text: MyString.youDontHaveAnyAccountText,
+            RowTextAndButton(
+              text: MyString.youDontHaveAnyAccount,
               onPressed: () {
                 Get.to(const SignupPage());
               },
-              textButton: MyString.createOneText,
+              textButton: MyString.createOne,
             ),
             const SizedBox(
               height: 60,
@@ -79,8 +55,15 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Padding loginButton() {
+//? Widgets
+
+class LoginButton extends StatelessWidget {
+  const LoginButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 8, 32, 36),
       child: SizedBox(
@@ -91,7 +74,65 @@ class LoginPage extends StatelessWidget {
             Get.offAll(const MainPage());
             GetStorage().write(StorageKey.isLogin, true);
           },
-          child: const Text(MyString.loginText),
+          child: const Text(MyString.login),
+        ),
+      ),
+    );
+  }
+}
+
+class TextButtonRecovery extends StatelessWidget {
+  const TextButtonRecovery({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(32, 16, 0, 16),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: TextButton(
+          onPressed: () {},
+          child: const Text(MyString.recoveryPassword),
+        ),
+      ),
+    );
+  }
+}
+
+class TextFieldPassword extends StatelessWidget {
+  const TextFieldPassword({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
+      child: TextField(
+        style: MyTextStyle.textFieldStyle,
+        decoration: InputDecoration(
+          hintText: MyString.userPassword,
+        ),
+      ),
+    );
+  }
+}
+
+class TextFieldEmail extends StatelessWidget {
+  const TextFieldEmail({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(32, 0, 32, 8),
+      child: TextField(
+        style: MyTextStyle.textFieldStyle,
+        decoration: InputDecoration(
+          hintText: MyString.userEmail,
         ),
       ),
     );
