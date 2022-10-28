@@ -15,6 +15,8 @@ class MyTextStyle {
     fontSize: 18,
     color: SolidColors.textGreyColor,
   );
+  static const TextStyle seeAllText =
+      TextStyle(fontSize: 16, fontWeight: FontWeight.w700);
   static const TextStyle lowTextGreyStyle = TextStyle(
     fontSize: 13,
     color: SolidColors.textGreyColor,

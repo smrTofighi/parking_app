@@ -2,6 +2,7 @@ class MyString {
   static const String goodAfternon = 'عصرت بخیر';
   static const String best = 'برترین ها';
   static const String nearFromYou = 'نزدیک ترین ها';
+  static const String newest = 'جدیدترین ها';
   static const String seeAll = 'همه رو ببین';
   static const String searchHint = 'هرجایی رو میخوای جستجو کن ):';
   static const String totalSpaceForCars = 'فضای موجود';

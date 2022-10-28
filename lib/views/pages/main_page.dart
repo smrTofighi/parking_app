@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:park_app/views/pages/single_park_page.dart';
+import 'package:park_app/views/widgets/floating_action_button.dart';
 import '../../core/values/colors.dart';
 import '../../core/values/strings.dart';
 import '../../gen/assets.gen.dart';
 import '../../models/park_model.dart';
-import '../widgets/row_text_and_button.dart';
+import '../widgets/see_all_and_button.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -62,24 +63,21 @@ class MainPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      rowTextAndElevatedButton(
-                        MyString.best,
-                        MyString.seeAll,
-                        () {},
+                      SeeAllAndButton(
+                        textButton: MyString.best,
+                        onPressed: () {},
                       ),
                       parkingListItem(5),
-                      rowTextAndElevatedButton(
-                        MyString.nearFromYou,
-                        MyString.seeAll,
-                        () {},
+                      SeeAllAndButton(
+                        textButton: MyString.nearFromYou,
+                        onPressed: () {},
                       ),
                       parkingListItem(
                         5,
                       ),
-                      rowTextAndElevatedButton(
-                        'جدیدترین ها',
-                        MyString.seeAll,
-                        () {},
+                      SeeAllAndButton(
+                        textButton: MyString.newest,
+                        onPressed: () {},
                       ),
                       parkingListItem(
                         parkList.length,
@@ -94,19 +92,11 @@ class MainPage extends StatelessWidget {
             ),
           ),
         ),
-
-        //? floating action button
-        floatingActionButton: floationgActionButton(),
-      ),
-    );
-  }
-
-  Widget floationgActionButton() {
-    return FloatingActionButton(
-      onPressed: () {},
-      backgroundColor: Colors.black,
-      child: const Icon(
-        Icons.location_on,
+        floatingActionButton: MyFloatingActionButton(
+          icon: const Icon(Icons.location_on),
+          backGroundColor: Colors.black,
+          onPressed: () {},
+        ),
       ),
     );
   }
