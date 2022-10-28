@@ -12,11 +12,11 @@ Row rowTextAndButton(
     children: [
       Text(
         text,
-        style: ConstantTextStyles.lowTextGreyStyle,
+        style: MyTextStyle.lowTextGreyStyle,
       ),
       TextButton(
         onPressed: onPressed,
-        style: ConstantButtonStyle.blueTextButtonStyle,
+        style: MyButtonStyle.blueTextButton,
         child: Text(textButton),
       )
     ],

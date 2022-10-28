@@ -1,4 +1,4 @@
-class ConstantStrings {
+class MyString {
   static const String goodAfternonText = 'عصرت بخیر';
   static const String bestText = 'برترین ها';
   static const String nearFromYou = 'نزدیک ترین ها';

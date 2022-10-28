@@ -3,11 +3,15 @@ import 'package:park_app/core/styles/text_styles.dart';
 
 import '../values/colors.dart';
 
-class ConstantButtonStyle {
-  static ButtonStyle blueTextButtonStyle = ButtonStyle(
+class MyButtonStyle {
+  static ButtonStyle blueTextButton = ButtonStyle(
     textStyle: MaterialStateProperty.all(
-      ConstantTextStyles.buttonTextStyle,
+      MyTextStyle.buttonTextStyle,
     ),
     foregroundColor: MaterialStateProperty.all(SolidColors.themeColor),
+  );
+
+  static ButtonStyle whiteTextButton = ButtonStyle(
+    foregroundColor: MaterialStateProperty.all(Colors.white),
   );
 }

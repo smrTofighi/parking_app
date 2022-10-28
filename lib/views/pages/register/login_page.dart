@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:park_app/core/styles/text_styles.dart';
 import 'package:park_app/core/values/storage.dart';
 import 'package:park_app/views/pages/main_page.dart';
 import 'package:park_app/views/pages/register/signup_page.dart';
 import 'package:park_app/views/pages/register/widgets/row_text_and_button.dart';
 import 'package:park_app/views/pages/register/widgets/text_widget.dart';
-import 'package:park_app/views/widgets/elevated_button_widget.dart';
-import 'package:park_app/views/widgets/text_button_widget.dart';
-import 'package:park_app/views/widgets/textfield_widget.dart';
 import '../../../core/values/strings.dart';
 
 class LoginPage extends StatelessWidget {
@@ -25,28 +23,53 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            helloText(text: ConstantStrings.helloAgainText),
+            helloText(text: MyString.helloAgainText),
             const SizedBox(
               height: 10.0,
             ),
-            messageForUserText(text: ConstantStrings.textForUserFromLoginText),
+            messageForUserText(text: MyString.textForUserFromLoginText),
             const SizedBox(
               height: 16.0,
             ),
-            emailTextField(),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(32, 0, 32, 8),
+              child: TextField(
+                style: MyTextStyle.textFieldStyle,
+                decoration: InputDecoration(
+                  hintText: MyString.emailText,
+                ),
+              ),
+            ),
             const SizedBox(
               height: 16.0,
             ),
-            passwordTextField(),
-            recoveryPasswordTextButton(),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
+              child: TextField(
+                style: MyTextStyle.textFieldStyle,
+                decoration: InputDecoration(
+                  hintText: MyString.passwordText,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(32, 16, 0, 16),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(MyString.recoveryPasswordText),
+                ),
+              ),
+            ),
             loginButton(),
             const Spacer(),
             rowTextAndButton(
-              text: ConstantStrings.youDontHaveAnyAccountText,
+              text: MyString.youDontHaveAnyAccountText,
               onPressed: () {
                 Get.to(const SignupPage());
               },
-              textButton: ConstantStrings.createOneText,
+              textButton: MyString.createOneText,
             ),
             const SizedBox(
               height: 60,
@@ -63,41 +86,14 @@ class LoginPage extends StatelessWidget {
       child: SizedBox(
         width: Get.width,
         height: 50,
-        child: elevatedButton(
+        child: ElevatedButton(
           onPressed: () {
             Get.offAll(const MainPage());
             GetStorage().write(StorageKey.isLogin, true);
           },
-          child: const Text(ConstantStrings.loginText),
+          child: const Text(MyString.loginText),
         ),
       ),
-    );
-  }
-
-  Padding recoveryPasswordTextButton() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 16, 0, 16),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: textButton(
-          onPressed: () {},
-          child: const Text(ConstantStrings.recoveryPasswordText),
-        ),
-      ),
-    );
-  }
-
-  Padding passwordTextField() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
-      child: textfield(hintText: ConstantStrings.passwordText),
-    );
-  }
-
-  Padding emailTextField() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 0, 32, 8),
-      child: textfield(hintText: ConstantStrings.emailText),
     );
   }
 }

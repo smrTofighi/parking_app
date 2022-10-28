@@ -63,14 +63,14 @@ class MainPage extends StatelessWidget {
                   child: Column(
                     children: [
                       rowTextAndElevatedButton(
-                        ConstantStrings.bestText,
-                        ConstantStrings.seeAllText,
+                        MyString.bestText,
+                        MyString.seeAllText,
                         () {},
                       ),
                       parkingListItem(5),
                       rowTextAndElevatedButton(
-                        ConstantStrings.nearFromYou,
-                        ConstantStrings.seeAllText,
+                        MyString.nearFromYou,
+                        MyString.seeAllText,
                         () {},
                       ),
                       parkingListItem(
@@ -78,7 +78,7 @@ class MainPage extends StatelessWidget {
                       ),
                       rowTextAndElevatedButton(
                         'جدیدترین ها',
-                        ConstantStrings.seeAllText,
+                        MyString.seeAllText,
                         () {},
                       ),
                       parkingListItem(
@@ -143,7 +143,7 @@ class MainPage extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: Text(
-          '${ConstantStrings.goodAfternonText} محمد جان',
+          '${MyString.goodAfternonText} محمد جان',
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.w100, fontSize: 16),
         ),

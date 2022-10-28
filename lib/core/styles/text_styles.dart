@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../values/colors.dart';
 
-class ConstantTextStyles {
+class MyTextStyle {
   static const TextStyle hintStyle =
       TextStyle(fontSize: 14, color: SolidColors.hintTextColor);
 

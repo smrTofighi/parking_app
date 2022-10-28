@@ -33,7 +33,7 @@ ElevatedButtonThemeData elevatedButtonTheme() {
 InputDecorationTheme inputDecoration() {
   return const InputDecorationTheme(
     fillColor: Colors.white,
-    hintStyle: ConstantTextStyles.hintStyle,
+    hintStyle: MyTextStyle.hintStyle,
     contentPadding:
         EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0, right: 14),
     filled: true,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:park_app/core/styles/button_styles.dart';
 import 'package:park_app/views/pages/onboarding/intro/intro_page_1.dart';
-import 'package:park_app/views/pages/onboarding/widgets/onboarding_textbutton_widget.dart';
+import 'package:park_app/views/pages/onboarding/widgets/smooth_page_indicator.dart';
 import 'package:park_app/views/pages/register/login_page.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/values/strings.dart';
 import 'intro/intro_page_2.dart';
 import 'intro/intro_page_3.dart';
@@ -33,49 +33,62 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 });
               },
               reverse: true,
-              children: const [
-                IntroPage1(),
-                IntroPage2(),
-                IntroPage3(),
-              ],
+              children: introPagesList,
             ),
-            smoothPageWithTextButtons(),
+            BottomSection(onLastPage: onLastPage, controller: _controller),
           ],
         ),
       ),
     );
   }
+}
 
-  Container smoothPageWithTextButtons() {
+List<Widget> introPagesList = const [
+  IntroPage1(),
+  IntroPage2(),
+  IntroPage3(),
+];
+
+class BottomSection extends StatelessWidget {
+  const BottomSection(
+      {super.key, required this.onLastPage, required this.controller});
+  final bool onLastPage;
+  final PageController controller;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       alignment: const Alignment(0, 0.75),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           onLastPage
-              ? onboardingTextButton(
+              ? TextButton(
                   onPressed: () {
                     Get.off(const LoginPage());
                   },
-                  child: const Text(ConstantStrings.letsGoText),
+                  style: MyButtonStyle.whiteTextButton,
+                  child: const Text(MyString.letsGoText),
                 )
-              : onboardingTextButton(
+              : TextButton(
                   onPressed: () {
-                    _controller.nextPage(
+                    controller.nextPage(
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeIn);
                   },
-                  child: const Text(ConstantStrings.skipText),
+                  style: MyButtonStyle.whiteTextButton,
+                  child: const Text(MyString.skipText),
                 ),
-          SmoothPageIndicator(
-              controller: _controller,
-              count: 3,
-              textDirection: TextDirection.ltr),
-          onboardingTextButton(
+          MySmoothPage(
+            controller: controller,
+            count: 3,
+          ),
+          TextButton(
             onPressed: () {
-              _controller.jumpToPage(2);
+              controller.jumpToPage(2);
             },
-            child: const Text(ConstantStrings.neverMindText),
+            style: MyButtonStyle.whiteTextButton,
+            child: const Text(MyString.neverMindText),
           )
         ],
       ),

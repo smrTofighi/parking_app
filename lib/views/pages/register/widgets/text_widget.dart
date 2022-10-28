@@ -8,7 +8,7 @@ Widget helloText({required text}) {
     width: Get.width,
     child: Align(
       alignment: Alignment.center,
-      child: Text(text, style: ConstantTextStyles.helloBigTextStyle),
+      child: Text(text, style: MyTextStyle.helloBigTextStyle),
     ),
   );
 }
@@ -17,6 +17,6 @@ Widget messageForUserText({required text}) {
   return Text(
     text,
     textAlign: TextAlign.center,
-    style: ConstantTextStyles.middleTextGreyStyle,
+    style: MyTextStyle.middleTextGreyStyle,
   );
 }
