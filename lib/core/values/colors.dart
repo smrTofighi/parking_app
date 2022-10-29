@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SolidColors {
   static const Color greyBackGround = Color.fromARGB(255, 235, 235, 235);
   static const Color textFieldBackGround = Color.fromARGB(255, 235, 235, 235);
-  static const Color primery = Color(0xff3055c4);
+  static const Color primery = Color(0xfff6d13a);
   static const Color backGround = Color(0xff3055c4);
   static const Color backGroundAppBar = Color.fromARGB(255, 235, 235, 235);
   static const Color container = Color(0xffFFFFEA);

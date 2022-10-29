@@ -6,7 +6,7 @@ class MyString {
   static const String seeAll = 'همه رو ببین';
   static const String searchHint = 'هرجایی رو میخوای جستجو کن ):';
   static const String totalSpaceForCars = 'فضای موجود';
-  static const String login = 'ورود';
+  static const String signin = 'ورود';
   static const String singup = 'ثبت نام';
   static const String neverMind = 'بیخیال';
   static const String letsGo = 'بریم';

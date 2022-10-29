@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.backGround,
+        backgroundColor: SolidColors.primery,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
               const SizedBox(
                 height: 16,
               ),
-              loading(color: Colors.white, size: 32),
+              loading(color: Colors.black, size: 32),
             ],
           ),
         ),
@@ -47,7 +47,7 @@ class _SplashPageState extends State<SplashPage> {
     return const Text(
       MyString.praking,
       style: TextStyle(
-          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
     );
   }
 
@@ -56,7 +56,7 @@ class _SplashPageState extends State<SplashPage> {
       padding: EdgeInsets.all(8.0),
       child: Text(
         'توسعه یافته توسط ورناکد',
-        style: TextStyle(color: Colors.white, fontSize: 12),
+        style: TextStyle(color: Colors.black, fontSize: 12),
         textAlign: TextAlign.center,
       ),
     );

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:park_app/core/styles/text_styles.dart';
 
-import '../values/colors.dart';
-
 class MyButtonStyle {
-  static ButtonStyle blueTextButton = ButtonStyle(
+  static ButtonStyle blackTextButton = ButtonStyle(
     textStyle: MaterialStateProperty.all(
       MyTextStyle.buttonTextStyle,
     ),
-    foregroundColor: MaterialStateProperty.all(SolidColors.primery),
+    foregroundColor: MaterialStateProperty.all(Colors.black),
   );
 
   static ButtonStyle whiteTextButton = ButtonStyle(

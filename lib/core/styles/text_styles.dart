@@ -19,9 +19,8 @@ class MyTextStyle {
       TextStyle(fontSize: 16, fontWeight: FontWeight.w700);
   static const TextStyle lowTextGreyStyle = TextStyle(
     fontSize: 13,
-    color: SolidColors.textGrey,
+    color: Color(0xffa8acaf),
   );
-  static const TextStyle buttonTextStyle = TextStyle(
-    fontSize: 14,
-  );
+  static const TextStyle buttonTextStyle =
+      TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
 }

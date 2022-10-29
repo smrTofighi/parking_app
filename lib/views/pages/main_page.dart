@@ -33,11 +33,8 @@ class MainPage extends StatelessWidget {
                 ),
               ),
               const Text(
-                'سیدمحمد رضاتوفیقی',
-                style: TextStyle(
-                    fontWeight: FontWeight.w100,
-                    fontSize: 16,
-                    color: Colors.black),
+                MyString.praking,
+                style: TextStyle(color: Colors.black),
               ),
               IconButton(
                 onPressed: () {},
@@ -123,7 +120,7 @@ class ParkingList extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: (() {
-              Get.to(SingleParkPage(listPark: parkList, index: index));
+              Get.to(const SingleParkPage());
             }),
             child: Container(
               margin: EdgeInsets.fromLTRB(

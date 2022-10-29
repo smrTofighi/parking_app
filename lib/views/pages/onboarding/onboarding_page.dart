@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:park_app/core/styles/button_styles.dart';
 import 'package:park_app/views/pages/onboarding/intro/intro_page_1.dart';
 import 'package:park_app/views/pages/onboarding/widgets/smooth_page_indicator.dart';
-import 'package:park_app/views/pages/register/login_page.dart';
+import 'package:park_app/views/pages/register/signin_page.dart';
 import '../../../core/values/strings.dart';
 import 'intro/intro_page_2.dart';
 import 'intro/intro_page_3.dart';
@@ -65,7 +65,7 @@ class BottomSection extends StatelessWidget {
           onLastPage
               ? TextButton(
                   onPressed: () {
-                    Get.off(const LoginPage());
+                    Get.off(const SigninPage());
                   },
                   style: MyButtonStyle.whiteTextButton,
                   child: const Text(MyString.letsGo),

@@ -22,7 +22,7 @@ class RowTextAndButton extends StatelessWidget {
         ),
         TextButton(
           onPressed: onPressed,
-          style: MyButtonStyle.blueTextButton,
+          style: MyButtonStyle.blackTextButton,
           child: Text(textButton),
         )
       ],
