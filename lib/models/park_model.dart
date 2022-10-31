@@ -8,6 +8,7 @@ class ParkModel {
   String? descripton;
   int? price;
   int? count;
+  int? type;
 
   ParkModel({
     required this.name,
@@ -22,7 +23,7 @@ class ParkModel {
   });
 }
 
-List<ParkModel> parkList = [
+List<ParkModel> parkCarList = [
   ParkModel(
       name: 'پارکینگ طبقاتی زائر',
       number: '02537755210',
@@ -74,16 +75,6 @@ List<ParkModel> parkList = [
       count: 1,
       image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
   ParkModel(
-      name: 'پارکینگ شبانه روزی میهن توریست',
-      number: '02537755210',
-      isOpen: true,
-      isSaved: false,
-      location: 'قم، بلوار امام رضا، خیابان حسینی ',
-      descripton: 'سلام این تست است تمام',
-      price: 5000,
-      count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
-  ParkModel(
       name: 'پارکینگ حرم',
       number: '02537755210',
       isOpen: true,
@@ -114,23 +105,14 @@ List<ParkModel> parkList = [
       count: 150,
       image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
   ParkModel(
-      name: 'پارکینگ امامزاده مبرقع',
-      number: '02537755210',
-      isOpen: true,
-      isSaved: false,
-      location: 'قم، آذر، خیابان طالقانی، کوچه 59',
-      descripton: 'سلام این تست است تمام',
-      price: 5000,
-      count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
-  ParkModel(
-      name: 'پارکینگ شهید مطهری',
-      number: '02537755210',
-      isOpen: true,
-      isSaved: false,
-      location: 'قم، خیابان شهید صبوری، خیابان عشق علی',
-      descripton: 'سلام این تست است تمام',
-      price: 5000,
-      count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+    name: 'پارکینگ شهید مطهری',
+    number: '02537755210',
+    isOpen: true,
+    isSaved: false,
+    location: 'قم، خیابان شهید صبوری، خیابان عشق علی',
+    descripton: 'سلام این تست است تمام',
+    price: 5000,
+    count: 150,
+    image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+  ),
 ];

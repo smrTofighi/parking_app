@@ -1,0 +1,59 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../core/values/colors.dart';
+import '../../../../core/values/dimens.dart';
+import '../../../../core/values/icons.dart';
+
+class MyBottomNavigation extends StatelessWidget {
+  const MyBottomNavigation({
+    Key? key,
+    required this.selectedIndex,
+  }) : super(key: key);
+
+  final RxInt selectedIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+      () => CurvedNavigationBar(
+        items: [
+          ImageIcon(
+            selectedIndex.value == 0
+                ? MyIcon.homeFill.image
+                : MyIcon.home.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          ),
+          ImageIcon(
+            selectedIndex.value == 1 ? MyIcon.mapFill.image : MyIcon.map.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          ),
+          ImageIcon(
+            selectedIndex.value == 2
+                ? MyIcon.ballotFill.image
+                : MyIcon.ballot.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          ),
+          ImageIcon(
+            selectedIndex.value == 3
+                ? MyIcon.userFill.image
+                : MyIcon.user.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          )
+        ],
+        backgroundColor: Colors.transparent,
+        color: SolidColors.bgPrimary,
+        index: selectedIndex.value,
+        onTap: (index) {
+          selectedIndex.value = index;
+        },
+        height: 65,
+      ),
+    );
+  }
+}
