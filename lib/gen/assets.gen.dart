@@ -12,6 +12,16 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ballot-fill.png
+  AssetGenImage get ballotFill =>
+      const AssetGenImage('assets/icons/ballot-fill.png');
+
+  /// File path: assets/icons/ballot.png
+  AssetGenImage get ballot => const AssetGenImage('assets/icons/ballot.png');
+
+  /// File path: assets/icons/bell.png
+  AssetGenImage get bell => const AssetGenImage('assets/icons/bell.png');
+
   /// File path: assets/icons/bookmark-fill.png
   AssetGenImage get bookmarkFill =>
       const AssetGenImage('assets/icons/bookmark-fill.png');
@@ -23,35 +33,48 @@ class $AssetsIconsGen {
   /// File path: assets/icons/car.png
   AssetGenImage get car => const AssetGenImage('assets/icons/car.png');
 
-  /// File path: assets/icons/close.png
-  AssetGenImage get close => const AssetGenImage('assets/icons/close.png');
+  /// File path: assets/icons/checkbox.png
+  AssetGenImage get checkbox =>
+      const AssetGenImage('assets/icons/checkbox.png');
 
   /// File path: assets/icons/dollar.png
   AssetGenImage get dollar => const AssetGenImage('assets/icons/dollar.png');
 
-  /// File path: assets/icons/facebook.png
-  AssetGenImage get facebook =>
-      const AssetGenImage('assets/icons/facebook.png');
+  /// File path: assets/icons/grid.png
+  AssetGenImage get grid => const AssetGenImage('assets/icons/grid.png');
 
-  /// File path: assets/icons/google.png
-  AssetGenImage get google => const AssetGenImage('assets/icons/google.png');
+  /// File path: assets/icons/home-fill.png
+  AssetGenImage get homeFill =>
+      const AssetGenImage('assets/icons/home-fill.png');
+
+  /// File path: assets/icons/home.png
+  AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
 
   /// File path: assets/icons/info.png
   AssetGenImage get info => const AssetGenImage('assets/icons/info.png');
 
-  /// File path: assets/icons/instagram.png
-  AssetGenImage get instagram =>
-      const AssetGenImage('assets/icons/instagram.png');
+  /// File path: assets/icons/map-fill.png
+  AssetGenImage get mapFill => const AssetGenImage('assets/icons/map-fill.png');
 
-  /// File path: assets/icons/location.png
-  AssetGenImage get location =>
-      const AssetGenImage('assets/icons/location.png');
+  /// File path: assets/icons/map.png
+  AssetGenImage get map => const AssetGenImage('assets/icons/map.png');
 
-  /// File path: assets/icons/logout.png
-  AssetGenImage get logout => const AssetGenImage('assets/icons/logout.png');
+  /// File path: assets/icons/marker.png
+  AssetGenImage get marker => const AssetGenImage('assets/icons/marker.png');
 
-  /// File path: assets/icons/menu.png
-  AssetGenImage get menu => const AssetGenImage('assets/icons/menu.png');
+  /// File path: assets/icons/motorcycle.png
+  AssetGenImage get motorcycle =>
+      const AssetGenImage('assets/icons/motorcycle.png');
+
+  /// File path: assets/icons/power.png
+  AssetGenImage get power => const AssetGenImage('assets/icons/power.png');
+
+  /// File path: assets/icons/refresh.png
+  AssetGenImage get refresh => const AssetGenImage('assets/icons/refresh.png');
+
+  /// File path: assets/icons/search-fill.png
+  AssetGenImage get searchFill =>
+      const AssetGenImage('assets/icons/search-fill.png');
 
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
@@ -63,32 +86,47 @@ class $AssetsIconsGen {
   /// File path: assets/icons/share.png
   AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
 
-  /// File path: assets/icons/thumbs-up.png
-  AssetGenImage get thumbsUp =>
-      const AssetGenImage('assets/icons/thumbs-up.png');
+  /// File path: assets/icons/star.png
+  AssetGenImage get star => const AssetGenImage('assets/icons/star.png');
 
-  /// File path: assets/icons/tick.png
-  AssetGenImage get tick => const AssetGenImage('assets/icons/tick.png');
+  /// File path: assets/icons/user-fill.png
+  AssetGenImage get userFill =>
+      const AssetGenImage('assets/icons/user-fill.png');
+
+  /// File path: assets/icons/user.png
+  AssetGenImage get user => const AssetGenImage('assets/icons/user.png');
+
+  /// File path: assets/icons/van.png
+  AssetGenImage get van => const AssetGenImage('assets/icons/van.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        ballotFill,
+        ballot,
+        bell,
         bookmarkFill,
         bookmark,
         car,
-        close,
+        checkbox,
         dollar,
-        facebook,
-        google,
+        grid,
+        homeFill,
+        home,
         info,
-        instagram,
-        location,
-        logout,
-        menu,
+        mapFill,
+        map,
+        marker,
+        motorcycle,
+        power,
+        refresh,
+        searchFill,
         search,
         settings,
         share,
-        thumbsUp,
-        tick
+        star,
+        userFill,
+        user,
+        van
       ];
 }
 

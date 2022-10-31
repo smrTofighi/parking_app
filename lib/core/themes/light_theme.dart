@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../styles/text_styles.dart';
+import 'package:park_app/core/values/dimens.dart';
+import 'package:park_app/gen/fonts.gen.dart';
 import '../values/colors.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
-    fontFamily: 'Samim',
+    fontFamily: FontFamily.samim,
     inputDecorationTheme: inputDecoration(),
     elevatedButtonTheme: elevatedButtonTheme(),
     textButtonTheme: textButtomTheme(),
@@ -26,7 +26,7 @@ TextButtonThemeData textButtomTheme() {
 ElevatedButtonThemeData elevatedButtonTheme() {
   return ElevatedButtonThemeData(
     style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(SolidColors.primery),
+        backgroundColor: MaterialStateProperty.all(SolidColors.primary),
         elevation: MaterialStateProperty.resolveWith(
           (states) {
             if (states.contains(MaterialState.pressed)) {
@@ -44,26 +44,28 @@ ElevatedButtonThemeData elevatedButtonTheme() {
 
 InputDecorationTheme inputDecoration() {
   return InputDecorationTheme(
-    fillColor: const Color(0xfff8f9fb),
+    fillColor: SolidColors.bgTextField,
     contentPadding:
         const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0, right: 14),
     filled: true,
     focusedBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Color.fromARGB(255, 168, 168, 168)),
-      borderRadius: BorderRadius.circular(14.0),
+      borderSide: const BorderSide(
+        color: SolidColors.enableBorderTextField,
+        width: 2,
+      ),
+      borderRadius: BorderRadius.circular(Dimens.radiusButtonAndTextField),
     ),
     enabledBorder: OutlineInputBorder(
       borderSide: const BorderSide(
-        color: Color.fromARGB(255, 218, 218, 218),
-        width: 2,
+        color: SolidColors.borderTextField,
       ),
-      borderRadius: BorderRadius.circular(14.0),
+      borderRadius: BorderRadius.circular(Dimens.radiusButtonAndTextField),
     ),
     border: OutlineInputBorder(
       borderSide: const BorderSide(
-        color: Color.fromARGB(255, 218, 218, 218),
+        color: SolidColors.borderTextField,
       ),
-      borderRadius: BorderRadius.circular(14.0),
+      borderRadius: BorderRadius.circular(Dimens.radiusButtonAndTextField),
     ),
   );
 }

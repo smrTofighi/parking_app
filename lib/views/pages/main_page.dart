@@ -1,281 +1,377 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:park_app/core/values/colors.dart';
 import 'package:park_app/core/values/dimens.dart';
 import 'package:park_app/core/values/icons.dart';
-import 'package:park_app/views/pages/single_park_page.dart';
-import 'package:park_app/views/widgets/floating_action_button.dart';
-import '../../core/values/colors.dart';
-import '../../core/values/strings.dart';
+import 'package:park_app/core/values/strings.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
 import '../../gen/assets.gen.dart';
-import '../../models/park_model.dart';
-import '../widgets/see_all_and_button.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
-
+  MainPage({super.key});
+  RxInt selectedRowIndex = 0.obs;
+  RxInt selectedIndex = 0.obs;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.backGround,
-        //? appbar
-        appBar: AppBar(
-          backgroundColor: SolidColors.backGroundAppBar,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        backgroundColor: SolidColors.bgPrimary,
+        body: SingleChildScrollView(
+          child: Column(
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  MyIcon.menu.image,
-                  color: Colors.black,
-                  size: Dimens.icon,
+              const MyAppBar(),
+              const TopSection(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                width: Dimens.width,
+                decoration: const BoxDecoration(
+                  color: SolidColors.bgWhite,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(Dimens.radiusContainer),
+                    topLeft: Radius.circular(Dimens.radiusContainer),
+                  ),
                 ),
-              ),
-              const Text(
-                MyString.praking,
-                style: TextStyle(color: Colors.black),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  MyIcon.search.image,
-                  color: Colors.black,
-                  size: Dimens.icon,
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(8, 32, 8, 16),
+                      child: TextField(
+                        cursorColor: SolidColors.primary,
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ),
+                    TopBottomNavigation(selectedRowIndex: selectedRowIndex),
+                    const SizedBox(
+                      height: 28.0,
+                    ),
+                    const Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'نزدیک ترین پارکینگ ها',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 600,
+                    )
+                  ],
                 ),
-              ),
+              )
             ],
           ),
         ),
+        bottomNavigationBar: MyBottomNavigation(selectedIndex: selectedIndex),
+        extendBody: true,
+      ),
+    );
+  }
+}
 
-        //? body
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
+class MyBottomNavigation extends StatelessWidget {
+  const MyBottomNavigation({
+    Key? key,
+    required this.selectedIndex,
+  }) : super(key: key);
+
+  final RxInt selectedIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+      () => CurvedNavigationBar(
+        items: [
+          ImageIcon(
+            selectedIndex.value == 0
+                ? MyIcon.homeFill.image
+                : MyIcon.home.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          ),
+          ImageIcon(
+            selectedIndex.value == 1 ? MyIcon.mapFill.image : MyIcon.map.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          ),
+          ImageIcon(
+            selectedIndex.value == 2
+                ? MyIcon.ballotFill.image
+                : MyIcon.ballot.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          ),
+          ImageIcon(
+            selectedIndex.value == 3
+                ? MyIcon.userFill.image
+                : MyIcon.user.image,
+            color: SolidColors.iconBlack,
+            size: Dimens.icon,
+          )
+        ],
+        backgroundColor: Colors.transparent,
+        color: SolidColors.bgPrimary,
+        index: selectedIndex.value,
+        onTap: (index) {
+          selectedIndex.value = index;
+        },
+        height: 65,
+      ),
+    );
+  }
+}
+
+class TopBottomNavigation extends StatelessWidget {
+  const TopBottomNavigation({
+    Key? key,
+    required this.selectedRowIndex,
+  }) : super(key: key);
+
+  final RxInt selectedRowIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+      child: Obx(
+        () => Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
               children: [
-                const WelcomeUserText(),
-                // const TextFieldSearch(),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(8, 32, 8, 0),
-                  width: Get.width,
-                  decoration: const BoxDecoration(
-                    color: SolidColors.greyBackGround,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  child: Column(
-                    children: [
-                      SeeAllAndButton(
-                        text: MyString.best,
-                        onPressed: () {},
+                AnimatedContainer(
+                  width: 38,
+                  height: 38,
+                  duration: const Duration(milliseconds: 200),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: selectedRowIndex.value == 0
+                        ? SolidColors.bgPrimary
+                        : SolidColors.bgWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: selectedRowIndex.value == 0
+                            ? Colors.transparent
+                            : Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
                       ),
-                      const ParkingList(count: 4),
-                      SeeAllAndButton(
-                        text: MyString.nearFromYou,
-                        onPressed: () {},
-                      ),
-                      const ParkingList(
-                        count: 5,
-                      ),
-                      SeeAllAndButton(
-                        text: MyString.newest,
-                        onPressed: () {},
-                      ),
-                      ParkingList(
-                        count: parkList.length,
-                      ),
-                      const SizedBox(
-                        height: 60,
-                      )
                     ],
                   ),
+                  child: IconButton(
+                    onPressed: () {
+                      selectedRowIndex.value = 0;
+                    },
+                    icon: ImageIcon(
+                      MyIcon.car.image,
+                      size: Dimens.icon,
+                      color: selectedRowIndex.value == 0
+                          ? SolidColors.iconWhite
+                          : SolidColors.iconBlack,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 4.0,
+                ),
+                const Text(
+                  'خودرو',
+                  style: TextStyle(fontSize: 12),
                 )
               ],
             ),
-          ),
-        ),
-        floatingActionButton: MyFloatingActionButton(
-          icon: const Icon(Icons.location_on),
-          backGroundColor: Colors.black,
-          onPressed: () {},
-        ),
-      ),
-    );
-  }
-}
-
-//? Widgets
-
-class ParkingList extends StatelessWidget {
-  const ParkingList({super.key, required this.count});
-  final int count;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 160,
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: (() {
-              Get.to(const SingleParkPage());
-            }),
-            child: Container(
-              margin: EdgeInsets.fromLTRB(
-                  index == parkList.length - 1 ? 24 : 0, 20, 24, 20),
-              height: 120,
-              padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
-              width: Dimens.width / 1.4,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
+            Column(
+              children: [
+                AnimatedContainer(
+                  width: 38,
+                  height: 38,
+                  duration: const Duration(milliseconds: 200),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: selectedRowIndex.value == 1
+                        ? SolidColors.bgPrimary
+                        : SolidColors.bgWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: selectedRowIndex.value == 1
+                            ? Colors.transparent
+                            : Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      selectedRowIndex.value = 1;
+                    },
+                    icon: ImageIcon(
+                      MyIcon.motorSycle.image,
+                      size: Dimens.icon,
+                      color: selectedRowIndex.value == 1
+                          ? SolidColors.iconWhite
+                          : SolidColors.iconBlack,
+                    ),
+                  ),
                 ),
-                color: SolidColors.greyBackGround,
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.shade500,
-                      blurRadius: 15,
-                      offset: const Offset(5, 5)),
-                  const BoxShadow(
-                    color: Colors.white,
-                    blurRadius: 15,
-                    offset: Offset(-5, -5),
-                  ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Row(
-                    children: [
-                      ImageIcon(
-                        AssetImage(Assets.icons.car.path),
-                        size: 28,
-                        color: SolidColors.primery,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        parkList[index].name!,
-                        style: const TextStyle(
-                            color: SolidColors.primery,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      ImageIcon(
-                        AssetImage(Assets.icons.location.path),
-                        size: 20,
-                        color: Colors.redAccent,
-                      ),
-                      const SizedBox(
-                        width: 6,
-                      ),
-                      Text(
-                        parkList[index].location.toString(),
-                        style: const TextStyle(
-                            fontSize: 12, color: SolidColors.red),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          ImageIcon(
-                            AssetImage(Assets.icons.dollar.path),
-                            size: 18,
-                            color: SolidColors.green,
-                          ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            '${parkList[index].price} تومان',
-                            style: const TextStyle(
-                                fontSize: 12, color: SolidColors.green),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          ImageIcon(
-                            AssetImage(parkList[index].isOpen!
-                                ? Assets.icons.tick.path
-                                : Assets.icons.close.path),
-                            size: 18,
-                            color: parkList[index].isOpen!
-                                ? SolidColors.primery
-                                : SolidColors.red,
-                          ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            parkList[index].isOpen! ? 'باز است' : 'بسته است',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: parkList[index].isOpen!
-                                  ? SolidColors.primery
-                                  : SolidColors.red,
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
+                const SizedBox(
+                  height: 4.0,
+                ),
+                const Text(
+                  'موتور',
+                  style: TextStyle(fontSize: 12),
+                )
+              ],
             ),
-          );
-        },
-        physics: const BouncingScrollPhysics(),
-        itemCount: count,
-        scrollDirection: Axis.horizontal,
-      ),
-    );
-  }
-}
-
-class WelcomeUserText extends StatelessWidget {
-  const WelcomeUserText({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(0, 28, 32, 0),
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Text(
-          '${MyString.goodAfternon} محمد جان',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w100, fontSize: 16),
+            Column(
+              children: [
+                AnimatedContainer(
+                  width: 38,
+                  height: 38,
+                  duration: const Duration(milliseconds: 200),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: selectedRowIndex.value == 2
+                        ? SolidColors.bgPrimary
+                        : SolidColors.bgWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: selectedRowIndex.value == 2
+                            ? Colors.transparent
+                            : Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      selectedRowIndex.value = 2;
+                    },
+                    icon: ImageIcon(
+                      MyIcon.van.image,
+                      size: Dimens.icon,
+                      color: selectedRowIndex.value == 2
+                          ? SolidColors.iconWhite
+                          : SolidColors.iconBlack,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 4.0,
+                ),
+                const Text(
+                  'ون',
+                  style: TextStyle(fontSize: 12),
+                )
+              ],
+            ),
+            Column(
+              children: [
+                AnimatedContainer(
+                  width: 38,
+                  height: 38,
+                  duration: const Duration(milliseconds: 200),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: selectedRowIndex.value == 3
+                        ? SolidColors.bgPrimary
+                        : SolidColors.bgWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: selectedRowIndex.value == 3
+                            ? Colors.transparent
+                            : Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      selectedRowIndex.value = 3;
+                    },
+                    icon: ImageIcon(
+                      MyIcon.grid.image,
+                      size: Dimens.icon,
+                      color: selectedRowIndex.value == 3
+                          ? SolidColors.iconWhite
+                          : SolidColors.iconBlack,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 4.0,
+                ),
+                const Text(
+                  'موارد دیگر',
+                  style: TextStyle(fontSize: 12),
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
   }
 }
 
-class TextFieldSearch extends StatelessWidget {
-  const TextFieldSearch({super.key});
+class TopSection extends StatelessWidget {
+  const TopSection({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(32, 24, 32, 8),
-      child: TextField(
-        style: TextStyle(fontSize: 14),
-        decoration: InputDecoration(
-          fillColor: SolidColors.textFieldBackGround,
-          hintText: 'هر جایی رو میخوای جستجو کن (:',
-        ),
+    return Container(
+      margin: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+      width: Dimens.width,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            'صبحت بخیر، سیدمحمد',
+            style: TextStyle(fontSize: 12, color: Colors.black54),
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          Text(
+            MyString.findTheBestPlaceForPark,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(8),
+      width: Dimens.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const CircleAvatar(
+            backgroundColor: Colors.white,
+            child: Text('م'),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              FontAwesomeIcons.bell,
+              size: 22,
+            ),
+          ),
+        ],
       ),
     );
   }

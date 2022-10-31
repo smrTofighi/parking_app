@@ -13,6 +13,7 @@ class MySmoothPage extends StatelessWidget {
       controller: controller,
       count: count,
       textDirection: TextDirection.ltr,
+      effect: const WormEffect(),
     );
   }
 }

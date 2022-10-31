@@ -10,7 +10,7 @@ import '../views/pages/main_page.dart';
 List<GetPage> routes = [
   GetPage(
       name: NameRoutes.routeMainPage,
-      page: () => const MainPage(),
+      page: () => MainPage(),
       binding: RegisterBinding()),
   GetPage(
     name: NameRoutes.routeSigninPage,

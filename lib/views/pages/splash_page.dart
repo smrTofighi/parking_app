@@ -25,12 +25,12 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.primery,
+        backgroundColor: SolidColors.bgPrimary,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              parkingText(),
+              const ParkingText(),
               const SizedBox(
                 height: 16,
               ),
@@ -38,20 +38,17 @@ class _SplashPageState extends State<SplashPage> {
             ],
           ),
         ),
-        bottomNavigationBar: vornaCodeText(),
+        bottomNavigationBar: const VornaCodeText(),
       ),
     );
   }
+}
 
-  Text parkingText() {
-    return const Text(
-      MyString.praking,
-      style: TextStyle(
-          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
-    );
-  }
+class VornaCodeText extends StatelessWidget {
+  const VornaCodeText({super.key});
 
-  Padding vornaCodeText() {
+  @override
+  Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
@@ -59,6 +56,19 @@ class _SplashPageState extends State<SplashPage> {
         style: TextStyle(color: Colors.black, fontSize: 12),
         textAlign: TextAlign.center,
       ),
+    );
+  }
+}
+
+class ParkingText extends StatelessWidget {
+  const ParkingText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      MyString.praking,
+      style: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
     );
   }
 }
