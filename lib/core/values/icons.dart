@@ -12,6 +12,8 @@ class MyIcon {
   static Image van = Image.asset(Assets.icons.van.path);
   static Image grid = Image.asset(Assets.icons.grid.path);
   static Image bell = Image.asset(Assets.icons.bell.path);
+  static Image maker = Image.asset(Assets.icons.marker.path);
+  static Image price = Image.asset(Assets.icons.dollar.path);
   //? fill icon
   static Image userFill = Image.asset(Assets.icons.userFill.path);
   static Image homeFill = Image.asset(Assets.icons.homeFill.path);

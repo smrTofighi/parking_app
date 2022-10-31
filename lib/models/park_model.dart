@@ -6,6 +6,7 @@ class ParkModel {
   bool? isSaved;
   String? location;
   String? descripton;
+  String? openTime;
   int? price;
   int? count;
   int? type;
@@ -20,6 +21,7 @@ class ParkModel {
     required this.price,
     required this.count,
     required this.image,
+    required this.openTime,
   });
 }
 
@@ -33,9 +35,10 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
-      name: 'پارکینگ عمومی شهسد کاظمی',
+      name: 'پارکینگ عمومی شهید کاظمی',
       number: '**********',
       isOpen: true,
       isSaved: false,
@@ -43,17 +46,19 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
       name: 'پارکینگ عمومی سیرنگ',
       number: '02537755210',
-      isOpen: true,
+      isOpen: false,
       isSaved: false,
       location: 'قم، خیابان امام خمینی ',
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
       name: 'پارکینگ طبقاتی معلم',
       number: '02537755210',
@@ -63,7 +68,8 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
       name: 'پارکینگ شبانه روزی شعبانی',
       number: '02537755210',
@@ -73,7 +79,8 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 1,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
       name: 'پارکینگ حرم',
       number: '02537755210',
@@ -83,7 +90,8 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 1000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: 'شبانه روزی'),
   ParkModel(
       name: 'پارکینگ سعدی',
       number: '02537755210',
@@ -93,7 +101,8 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
       name: 'پارکینگ شرقی حرم',
       number: '02537755210',
@@ -103,16 +112,17 @@ List<ParkModel> parkCarList = [
       descripton: 'سلام این تست است تمام',
       price: 5000,
       count: 150,
-      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
   ParkModel(
-    name: 'پارکینگ شهید مطهری',
-    number: '02537755210',
-    isOpen: true,
-    isSaved: false,
-    location: 'قم، خیابان شهید صبوری، خیابان عشق علی',
-    descripton: 'سلام این تست است تمام',
-    price: 5000,
-    count: 150,
-    image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
-  ),
+      name: 'پارکینگ شهید مطهری',
+      number: '02537755210',
+      isOpen: true,
+      isSaved: false,
+      location: 'قم، خیابان شهید صبوری، خیابان عشق علی',
+      descripton: 'سلام این تست است تمام',
+      price: 5000,
+      count: 150,
+      image: 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg',
+      openTime: '7:00 - 22:00'),
 ];

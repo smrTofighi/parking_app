@@ -1,9 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:park_app/core/values/dimens.dart';
 import '../../../../core/values/colors.dart';
-import '../../../../core/values/dimens.dart';
 import '../../../../core/values/icons.dart';
 
 class MyBottomNavigation extends StatelessWidget {
@@ -24,26 +23,26 @@ class MyBottomNavigation extends StatelessWidget {
                 ? MyIcon.homeFill.image
                 : MyIcon.home.image,
             color: SolidColors.iconBlack,
-            size: Dimens.icon,
+            size: Dimens.mediumIcon,
           ),
+          // ImageIcon(
+          //   selectedIndex.value == 1 ? MyIcon.mapFill.image : MyIcon.map.image,
+          //   color: SolidColors.iconBlack,
+          //   size: Dimens.mediumIcon,
+          // ),
           ImageIcon(
-            selectedIndex.value == 1 ? MyIcon.mapFill.image : MyIcon.map.image,
-            color: SolidColors.iconBlack,
-            size: Dimens.icon,
-          ),
-          ImageIcon(
-            selectedIndex.value == 2
+            selectedIndex.value == 1
                 ? MyIcon.ballotFill.image
                 : MyIcon.ballot.image,
             color: SolidColors.iconBlack,
-            size: Dimens.icon,
+            size: Dimens.mediumIcon,
           ),
           ImageIcon(
-            selectedIndex.value == 3
+            selectedIndex.value == 2
                 ? MyIcon.userFill.image
                 : MyIcon.user.image,
             color: SolidColors.iconBlack,
-            size: Dimens.icon,
+            size: Dimens.mediumIcon,
           )
         ],
         backgroundColor: Colors.transparent,

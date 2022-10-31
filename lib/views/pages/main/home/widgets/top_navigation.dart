@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/values/colors.dart';
-import '../../../../core/values/dimens.dart';
-import '../../../../core/values/icons.dart';
+import '../../../../../core/values/colors.dart';
+import '../../../../../core/values/dimens.dart';
+import '../../../../../core/values/icons.dart';
 
 class TopNavigation extends StatelessWidget {
   const TopNavigation({
@@ -47,7 +47,7 @@ class TopNavigation extends StatelessWidget {
                     },
                     icon: ImageIcon(
                       MyIcon.car.image,
-                      size: Dimens.icon,
+                      size: Dimens.smallIcon,
                       color: selectedRowIndex.value == 0
                           ? SolidColors.iconWhite
                           : SolidColors.iconBlack,
@@ -89,7 +89,7 @@ class TopNavigation extends StatelessWidget {
                     },
                     icon: ImageIcon(
                       MyIcon.motorSycle.image,
-                      size: Dimens.icon,
+                      size: Dimens.smallIcon,
                       color: selectedRowIndex.value == 1
                           ? SolidColors.iconWhite
                           : SolidColors.iconBlack,
@@ -131,7 +131,7 @@ class TopNavigation extends StatelessWidget {
                     },
                     icon: ImageIcon(
                       MyIcon.van.image,
-                      size: Dimens.icon,
+                      size: Dimens.smallIcon,
                       color: selectedRowIndex.value == 2
                           ? SolidColors.iconWhite
                           : SolidColors.iconBlack,
@@ -173,7 +173,7 @@ class TopNavigation extends StatelessWidget {
                     },
                     icon: ImageIcon(
                       MyIcon.grid.image,
-                      size: Dimens.icon,
+                      size: Dimens.smallIcon,
                       color: selectedRowIndex.value == 3
                           ? SolidColors.iconWhite
                           : SolidColors.iconBlack,
