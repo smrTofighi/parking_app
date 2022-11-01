@@ -11,11 +11,12 @@ import '../../../../../core/values/dimens.dart';
 
 // ignore: must_be_immutable
 class BottomSection extends StatelessWidget {
-  BottomSection({super.key});
-  RxInt selectedRowIndex = 0.obs;
+  const BottomSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: Dimens.height / 5),
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       width: Dimens.width,
       decoration: const BoxDecoration(
@@ -34,13 +35,10 @@ class BottomSection extends StatelessWidget {
               style: TextStyle(fontSize: 14),
             ),
           ),
-          TopNavigation(selectedRowIndex: selectedRowIndex),
-          const SizedBox(
-            height: 28.0,
-          ),
+          const TopNavigation(),
           Obx(
             () => IndexedStack(
-              index: selectedRowIndex.value,
+              index: TopNavigation.selectedRowIndex.value,
               children: const [
                 CarPart(),
                 MotorPart(),

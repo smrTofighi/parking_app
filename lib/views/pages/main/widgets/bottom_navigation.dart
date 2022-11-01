@@ -18,31 +18,40 @@ class MyBottomNavigation extends StatelessWidget {
     return Obx(
       () => CurvedNavigationBar(
         items: [
-          ImageIcon(
-            selectedIndex.value == 0
-                ? MyIcon.homeFill.image
-                : MyIcon.home.image,
-            color: SolidColors.iconBlack,
-            size: Dimens.mediumIcon,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ImageIcon(
+              selectedIndex.value == 0
+                  ? MyIcon.homeFill.image
+                  : MyIcon.home.image,
+              color: SolidColors.iconBlack,
+              size: Dimens.mediumIcon,
+            ),
           ),
           // ImageIcon(
           //   selectedIndex.value == 1 ? MyIcon.mapFill.image : MyIcon.map.image,
           //   color: SolidColors.iconBlack,
           //   size: Dimens.mediumIcon,
           // ),
-          ImageIcon(
-            selectedIndex.value == 1
-                ? MyIcon.ballotFill.image
-                : MyIcon.ballot.image,
-            color: SolidColors.iconBlack,
-            size: Dimens.mediumIcon,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ImageIcon(
+              selectedIndex.value == 1
+                  ? MyIcon.ballotFill.image
+                  : MyIcon.ballot.image,
+              color: SolidColors.iconBlack,
+              size: Dimens.mediumIcon,
+            ),
           ),
-          ImageIcon(
-            selectedIndex.value == 2
-                ? MyIcon.userFill.image
-                : MyIcon.user.image,
-            color: SolidColors.iconBlack,
-            size: Dimens.mediumIcon,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ImageIcon(
+              selectedIndex.value == 2
+                  ? MyIcon.userFill.image
+                  : MyIcon.user.image,
+              color: SolidColors.iconBlack,
+              size: Dimens.mediumIcon,
+            ),
           )
         ],
         backgroundColor: Colors.transparent,

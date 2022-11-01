@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/values/colors.dart';
 import '../../../../../core/values/dimens.dart';
 import '../../../../../core/values/icons.dart';
@@ -19,7 +20,7 @@ class CarPart extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 170,
+          height: 190,
           child: ListView.builder(
             itemBuilder: (context, index) => Padding(
               padding: EdgeInsets.fromLTRB(
@@ -28,12 +29,23 @@ class CarPart extends StatelessWidget {
                 children: [
                   Container(
                     width: Dimens.width / 2.4,
-                    height: 90,
+                    height: 110,
                     decoration: BoxDecoration(
-                      color: SolidColors.primary,
                       borderRadius: BorderRadius.circular(
                         Dimens.radiusButtonAndTextField,
                       ),
+                      image: DecorationImage(
+                          image: NetworkImage(parkCarList[index].image!),
+                          fit: BoxFit.cover),
+                    ),
+                    foregroundDecoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        Dimens.radiusButtonAndTextField,
+                      ),
+                      gradient: LinearGradient(
+                          colors: [Colors.black, Colors.black.withOpacity(0.2)],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.center),
                     ),
                   ),
                   const SizedBox(
@@ -81,90 +93,97 @@ class CarPart extends StatelessWidget {
               ),
             ),
             itemCount: 5,
+            shrinkWrap: true,
             scrollDirection: Axis.horizontal,
           ),
         ),
         const Align(
           alignment: Alignment.centerRight,
           child: Text(
-            'تاریخچه پارک ها',
+            'برترین پارکینگ ها',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
         SizedBox(
-          width: Dimens.width,
-          height: 120 * 5.5,
+          height: 190,
           child: ListView.builder(
             itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Row(
+              padding: EdgeInsets.fromLTRB(
+                  index == 4 ? 0 : 8, 16, index == 0 ? 0 : 8, 8),
+              child: Column(
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: Dimens.width / 2.4,
+                    height: 110,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(
                         Dimens.radiusButtonAndTextField,
                       ),
-                      color: SolidColors.bottomContainerInfoScreen,
+                      image: DecorationImage(
+                          image: NetworkImage(parkCarList[index].image!),
+                          fit: BoxFit.cover),
+                    ),
+                    foregroundDecoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        Dimens.radiusButtonAndTextField,
+                      ),
+                      gradient: LinearGradient(
+                          colors: [Colors.black, Colors.black.withOpacity(0.2)],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.center),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          parkCarList[index].name!,
-                          style: const TextStyle(fontWeight: FontWeight.w700),
-                        ),
-                        const SizedBox(
-                          height: 6.0,
-                        ),
-                        Row(
-                          children: [
-                            ImageIcon(
-                              MyIcon.maker.image,
-                              size: 18,
-                              color: Colors.grey,
-                            ),
-                            const SizedBox(
-                              width: 4.0,
-                            ),
-                            Text(
-                              parkCarList[index].location!,
-                              style: const TextStyle(
-                                  color: Colors.grey, fontSize: 12),
+                  const SizedBox(
+                    height: 6.0,
+                  ),
+                  Text(
+                    parkCarList[index].name!,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 14),
+                  ),
+                  const SizedBox(
+                    height: 2.0,
+                  ),
+                  Row(
+                    children: [
+                      parkCarList[index].isOpen!
+                          ? const Text(
+                              'باز',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.greenAccent,
+                              ),
                             )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 6.0,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "\$ ${parkCarList[index].price}/",
-                              style: const TextStyle(
-                                  color: SolidColors.primary,
-                                  fontWeight: FontWeight.bold),
+                          : const Text(
+                              'بسته',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.redAccent,
+                              ),
                             ),
-                            const Text(
-                              'ساعت',
-                              style: TextStyle(fontSize: 12),
-                            )
-                          ],
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        parkCarList[index].openTime!,
+                        style: const TextStyle(
+                          fontSize: 12,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   )
                 ],
               ),
             ),
-            physics: const NeverScrollableScrollPhysics(),
             itemCount: 5,
-            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
           ),
+        ),
+        const SizedBox(
+          height: 68,
         ),
       ],
     );

@@ -14,14 +14,14 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: SolidColors.bgPrimary,
+        backgroundColor: SolidColors.bgWhite,
         body: Obx(
           () => IndexedStack(
             index: selectedIndex.value,
-            children: [
+            children: const [
               Positioned.fill(child: HomePage()),
-              const RequestPage(),
-              const ProfilePage(),
+              RequestPage(),
+              ProfilePage(),
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:park_app/core/utils/snackbars/warning.dart';
 
 import '../../../../../core/values/colors.dart';
 import '../../../../../core/values/dimens.dart';
@@ -8,15 +9,14 @@ import '../../../../../core/values/icons.dart';
 class TopNavigation extends StatelessWidget {
   const TopNavigation({
     Key? key,
-    required this.selectedRowIndex,
   }) : super(key: key);
 
-  final RxInt selectedRowIndex;
+  static RxInt selectedRowIndex = 0.obs;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 36),
       child: Obx(
         () => Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -127,7 +127,8 @@ class TopNavigation extends StatelessWidget {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      selectedRowIndex.value = 2;
+                      // selectedRowIndex.value = 2;
+                      warningSnackBar();
                     },
                     icon: ImageIcon(
                       MyIcon.van.image,
@@ -169,7 +170,8 @@ class TopNavigation extends StatelessWidget {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      selectedRowIndex.value = 3;
+                      // selectedRowIndex.value = 3;
+                      warningSnackBar();
                     },
                     icon: ImageIcon(
                       MyIcon.grid.image,

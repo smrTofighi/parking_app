@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:park_app/core/values/colors.dart';
 
 import '../../../../../core/values/dimens.dart';
 
@@ -11,8 +12,9 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       width: Dimens.width,
+      color: SolidColors.bgPrimary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -7,15 +7,24 @@ import 'package:park_app/views/pages/main/home/widgets/top_section.dart';
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
+      physics: const ClampingScrollPhysics(),
+      child: Stack(
         children: [
-          const MyAppBar(),
-          const TopSection(),
-          BottomSection(),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Column(
+              children: const [
+                MyAppBar(),
+                TopSection(),
+              ],
+            ),
+          ),
+          const BottomSection(),
         ],
       ),
     );

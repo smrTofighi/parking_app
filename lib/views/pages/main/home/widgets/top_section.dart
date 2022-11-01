@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:park_app/core/values/colors.dart';
 
 import '../../../../../core/values/dimens.dart';
 import '../../../../../core/values/strings.dart';
@@ -11,8 +12,10 @@ class TopSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(8, 0, 8, 20),
+      padding: const EdgeInsets.fromLTRB(8, 0, 8, 20),
       width: Dimens.width,
+      height: Dimens.height / 3,
+      color: SolidColors.bgPrimary,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
