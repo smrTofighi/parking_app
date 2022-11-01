@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:park_app/core/values/colors.dart';
 import 'package:park_app/views/pages/main/home/home_page.dart';
-import 'package:park_app/views/pages/main/profile_page.dart';
+import 'package:park_app/views/pages/main/profile/profile_page.dart';
 import 'package:park_app/views/pages/main/request_page.dart';
 import 'package:park_app/views/pages/main/widgets/bottom_navigation.dart';
 
