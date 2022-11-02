@@ -12,6 +12,20 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/add-fill.png
+  AssetGenImage get addFill => const AssetGenImage('assets/icons/add-fill.png');
+
+  /// File path: assets/icons/add.png
+  AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
+
+  /// File path: assets/icons/angle-left.png
+  AssetGenImage get angleLeft =>
+      const AssetGenImage('assets/icons/angle-left.png');
+
+  /// File path: assets/icons/angle-right.png
+  AssetGenImage get angleRight =>
+      const AssetGenImage('assets/icons/angle-right.png');
+
   /// File path: assets/icons/ballot-fill.png
   AssetGenImage get ballotFill =>
       const AssetGenImage('assets/icons/ballot-fill.png');
@@ -43,6 +57,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/grid.png
   AssetGenImage get grid => const AssetGenImage('assets/icons/grid.png');
 
+  /// File path: assets/icons/history.png
+  AssetGenImage get history => const AssetGenImage('assets/icons/history.png');
+
   /// File path: assets/icons/home-fill.png
   AssetGenImage get homeFill =>
       const AssetGenImage('assets/icons/home-fill.png');
@@ -52,6 +69,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/info.png
   AssetGenImage get info => const AssetGenImage('assets/icons/info.png');
+
+  /// File path: assets/icons/logout.png
+  AssetGenImage get logout => const AssetGenImage('assets/icons/logout.png');
 
   /// File path: assets/icons/map-fill.png
   AssetGenImage get mapFill => const AssetGenImage('assets/icons/map-fill.png');
@@ -65,6 +85,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/motorcycle.png
   AssetGenImage get motorcycle =>
       const AssetGenImage('assets/icons/motorcycle.png');
+
+  /// File path: assets/icons/phone-call.png
+  AssetGenImage get phoneCall =>
+      const AssetGenImage('assets/icons/phone-call.png');
 
   /// File path: assets/icons/power.png
   AssetGenImage get power => const AssetGenImage('assets/icons/power.png');
@@ -86,6 +110,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/share.png
   AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
 
+  /// File path: assets/icons/shield-interrogation.png
+  AssetGenImage get shieldInterrogation =>
+      const AssetGenImage('assets/icons/shield-interrogation.png');
+
+  /// File path: assets/icons/sign-out.png
+  AssetGenImage get signOut => const AssetGenImage('assets/icons/sign-out.png');
+
   /// File path: assets/icons/star.png
   AssetGenImage get star => const AssetGenImage('assets/icons/star.png');
 
@@ -101,6 +132,10 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        addFill,
+        add,
+        angleLeft,
+        angleRight,
         ballotFill,
         ballot,
         bell,
@@ -110,19 +145,24 @@ class $AssetsIconsGen {
         checkbox,
         dollar,
         grid,
+        history,
         homeFill,
         home,
         info,
+        logout,
         mapFill,
         map,
         marker,
         motorcycle,
+        phoneCall,
         power,
         refresh,
         searchFill,
         search,
         settings,
         share,
+        shieldInterrogation,
+        signOut,
         star,
         userFill,
         user,

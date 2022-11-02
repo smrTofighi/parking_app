@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:park_app/core/values/colors.dart';
+import 'package:park_app/routes/pages.dart';
 
 import '../../../../../core/values/dimens.dart';
 
@@ -18,9 +20,14 @@ class MyAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Text('م'),
+          InkWell(
+            onTap: () {
+              Get.toNamed(NameRoutes.routePersonalInfoPage);
+            },
+            child: const CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Text('م'),
+            ),
           ),
           IconButton(
             onPressed: () {},

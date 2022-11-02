@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:park_app/routes/pages.dart';
+import 'package:park_app/views/pages/main/profile/personal_info_page.dart';
 import 'package:park_app/views/pages/onboarding/onboarding_page.dart';
 import 'package:park_app/views/pages/register/signin_page.dart';
 import 'package:park_app/views/pages/register/signup_page.dart';
@@ -27,5 +28,9 @@ List<GetPage> routes = [
   GetPage(
     name: NameRoutes.routeSingleParkPage,
     page: () => const SingleParkPage(),
+  ),
+  GetPage(
+    name: NameRoutes.routePersonalInfoPage,
+    page: () => const PersonalInfoPage(),
   ),
 ];

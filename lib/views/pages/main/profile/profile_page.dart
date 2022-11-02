@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:park_app/core/values/dimens.dart';
-import 'package:park_app/gen/assets.gen.dart';
+import 'package:park_app/core/values/strings.dart';
+import 'package:park_app/views/pages/main/profile/widgets/profile_list_tile.dart';
+import 'package:park_app/views/pages/main/profile/widgets/user_profile_view.dart';
 import '../../../../core/values/colors.dart';
 import '../../../../core/values/icons.dart';
 
@@ -13,40 +15,7 @@ class ProfilePage extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 50, 16, 16),
       child: Column(
         children: [
-          Row(
-            children: [
-              Container(
-                width: 55,
-                height: 55,
-                decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(Dimens.radiusButtonAndTextField),
-                    image: DecorationImage(
-                        image: Image.asset(Assets.images.img.path).image,
-                        fit: BoxFit.cover)),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    'سیدمحمد رضاتوفیقی',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text(
-                    'mrtofxn@gmail.com',
-                    style: TextStyle(
-                        fontSize: 13, color: Color.fromRGBO(97, 97, 97, 1)),
-                  ),
-                ],
-              )
-            ],
-          ),
+          const UserProfileView(),
           const SizedBox(
             height: 16.0,
           ),
@@ -58,147 +27,24 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(
             height: 16.0,
           ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
-          ),
+          ProfileListTile(
+              icon: MyIcon.user.image,
+              title: MyString.personalInfo,
+              onPressed: () {}),
           const SizedBox(
             height: 16.0,
           ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
-          ),
+          ProfileListTile(
+              icon: MyIcon.history.image,
+              title: MyString.parkingHistory,
+              onPressed: () {}),
           const SizedBox(
             height: 16.0,
           ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
-          ),
-          const SizedBox(
-            height: 16.0,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
-          ),
+          ProfileListTile(
+              icon: MyIcon.bookMark.image,
+              title: MyString.favoriteParking,
+              onPressed: () {}),
           const SizedBox(
             height: 16.0,
           ),
@@ -210,111 +56,31 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(
             height: 16.0,
           ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
-          ),
+          ProfileListTile(
+              icon: MyIcon.upgrade.image,
+              title: MyString.upgrade,
+              onPressed: () {}),
           const SizedBox(
             height: 16.0,
           ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
-          ),
+          ProfileListTile(
+              icon: MyIcon.privacy.image,
+              title: MyString.privacy,
+              onPressed: () {}),
           const SizedBox(
             height: 16.0,
           ),
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: SolidColors.bgPrimary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: ImageIcon(
-                    MyIcon.van.image,
-                    size: Dimens.smallIcon,
-                    color: SolidColors.iconBlack,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              const Text('اطلاعات شخصی'),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_forward))
-            ],
+          ProfileListTile(
+              icon: MyIcon.aboutUs.image,
+              title: MyString.aboutUs,
+              onPressed: () {}),
+          const SizedBox(
+            height: 16.0,
           ),
+          ProfileListTile(
+              icon: MyIcon.logOut.image,
+              title: MyString.logOut,
+              onPressed: () {}),
           const Spacer(),
           const Text(
             'ورژن 1.0',

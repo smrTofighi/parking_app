@@ -15,4 +15,12 @@ class MyString {
   static const String userName = 'نام کاربر';
   static const String recoveryPassword = 'بازیابی رمز عبور';
   static const String findTheBestPlaceForPark = 'بهترین مکان برای پارک پیدا کن';
+
+  static const String personalInfo = 'اطلاعات شخصی';
+  static const String parkingHistory = 'تاریخچه پارک ها';
+  static const String favoriteParking = 'پارکینگ های مورد علاقه';
+  static const String upgrade = 'بروزرسانی';
+  static const String privacy = 'حریم شخصی';
+  static const String aboutUs = 'درباره ما';
+  static const String logOut = 'خروج از حساب کاربری';
 }
