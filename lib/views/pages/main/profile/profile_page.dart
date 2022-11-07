@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/core/values/dimens.dart';
+import 'package:get/get.dart';
 import 'package:park_app/core/values/strings.dart';
+import 'package:park_app/routes/pages.dart';
+import 'package:park_app/views/pages/main/profile/widgets/divider.dart';
 import 'package:park_app/views/pages/main/profile/widgets/profile_list_tile.dart';
 import 'package:park_app/views/pages/main/profile/widgets/user_profile_view.dart';
-import '../../../../core/values/colors.dart';
 import '../../../../core/values/icons.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -19,18 +20,16 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(
             height: 16.0,
           ),
-          const Divider(
-            color: Colors.black,
-            indent: 16,
-            endIndent: 16,
-          ),
+          const MyDivider(color: Colors.black, size: 16),
           const SizedBox(
             height: 16.0,
           ),
           ProfileListTile(
               icon: MyIcon.user.image,
               title: MyString.personalInfo,
-              onPressed: () {}),
+              onPressed: () {
+                Get.toNamed(NameRoutes.routePersonalInfoPage);
+              }),
           const SizedBox(
             height: 16.0,
           ),
@@ -48,11 +47,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(
             height: 16.0,
           ),
-          const Divider(
-            color: Colors.black,
-            indent: 16,
-            endIndent: 16,
-          ),
+          const MyDivider(color: Colors.black, size: 16),
           const SizedBox(
             height: 16.0,
           ),

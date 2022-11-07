@@ -24,12 +24,6 @@ class ProfileListTile extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: SolidColors.bgPrimary,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                blurRadius: 5,
-              ),
-            ],
           ),
           child: ImageIcon(
             icon,

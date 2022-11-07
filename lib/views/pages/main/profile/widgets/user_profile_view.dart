@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/values/dimens.dart';
 import '../../../../../gen/assets.gen.dart';
 

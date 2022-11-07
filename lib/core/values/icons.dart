@@ -22,6 +22,7 @@ class MyIcon {
   static Image aboutUs = Image.asset(Assets.icons.info.path);
   static Image logOut = Image.asset(Assets.icons.logout.path);
   static Image arrowLeft = Image.asset(Assets.icons.angleLeft.path);
+  static Image arrowRight = Image.asset(Assets.icons.angleRight.path);
   //? fill icon
   static Image userFill = Image.asset(Assets.icons.userFill.path);
   static Image homeFill = Image.asset(Assets.icons.homeFill.path);

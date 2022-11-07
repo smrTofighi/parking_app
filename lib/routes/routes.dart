@@ -4,7 +4,7 @@ import 'package:park_app/views/pages/main/profile/personal_info_page.dart';
 import 'package:park_app/views/pages/onboarding/onboarding_page.dart';
 import 'package:park_app/views/pages/register/signin_page.dart';
 import 'package:park_app/views/pages/register/signup_page.dart';
-import 'package:park_app/views/pages/single_park_page.dart';
+import 'package:park_app/views/pages/park/single_park_page.dart';
 import '../bindings/binding.dart';
 import '../views/pages/main/main_page.dart';
 
@@ -27,7 +27,7 @@ List<GetPage> routes = [
   ),
   GetPage(
     name: NameRoutes.routeSingleParkPage,
-    page: () => const SingleParkPage(),
+    page: () => SingleParkPage(),
   ),
   GetPage(
     name: NameRoutes.routePersonalInfoPage,
