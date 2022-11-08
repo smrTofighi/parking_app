@@ -5,8 +5,8 @@ import 'package:park_app/core/values/dimens.dart';
 import '../../../../core/values/colors.dart';
 import '../../../../core/values/icons.dart';
 
-class MyBottomNavigation extends StatelessWidget {
-  const MyBottomNavigation({
+class MainBottomNavigation extends StatelessWidget {
+  const MainBottomNavigation({
     Key? key,
     required this.selectedIndex,
   }) : super(key: key);

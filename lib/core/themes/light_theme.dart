@@ -53,7 +53,7 @@ ElevatedButtonThemeData elevatedButtonTheme() {
       ),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14.0),
+          borderRadius: BorderRadius.circular(8.0),
         ),
       ),
     ),

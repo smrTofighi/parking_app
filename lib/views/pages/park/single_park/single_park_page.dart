@@ -2,14 +2,15 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:park_app/core/values/colors.dart';
-import 'package:park_app/views/pages/park/widgets/image_slide.dart';
-import 'package:park_app/views/pages/park/widgets/my_indicator.dart';
-import 'package:park_app/views/pages/park/widgets/open_time_and_area.dart';
-import 'package:park_app/views/pages/park/widgets/park_bottom_navigation.dart';
-import 'package:park_app/views/pages/park/widgets/rules_text.dart';
-import 'package:park_app/views/pages/park/widgets/section_name_location_save.dart';
-import 'package:park_app/views/pages/park/widgets/time_list_for_booking.dart';
-import '../../../core/values/icons.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/image_slide.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/my_indicator.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/open_time_and_area.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/single_park_bottom_navigation.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/rules_text.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/section_name_location_save.dart';
+import 'package:park_app/views/pages/park/single_park/widgets/time_list_for_booking.dart';
+
+import '../../../../core/values/icons.dart';
 
 class SingleParkPage extends StatelessWidget {
   SingleParkPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class SingleParkPage extends StatelessWidget {
           backgroundColor: SolidColors.bgWhite,
           elevation: 0,
           title: const Text(
-            'مشحصات پارکنیگ',
+            'مشخصات پارکنیگ',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w700,
@@ -107,7 +108,7 @@ class SingleParkPage extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: const ParkBottomNavigation(),
+        bottomNavigationBar: const SingleParkBottomNavigation(),
       ),
     );
   }

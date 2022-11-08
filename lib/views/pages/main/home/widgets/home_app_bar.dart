@@ -6,8 +6,8 @@ import 'package:park_app/routes/pages.dart';
 
 import '../../../../../core/values/dimens.dart';
 
-class MyAppBar extends StatelessWidget {
-  const MyAppBar({
+class HomeAppBar extends StatelessWidget {
+  const HomeAppBar({
     Key? key,
   }) : super(key: key);
 

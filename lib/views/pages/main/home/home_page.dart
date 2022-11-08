@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:park_app/views/pages/main/home/widgets/app_bar.dart';
+import 'package:park_app/views/pages/main/home/widgets/home_app_bar.dart';
 import 'package:park_app/views/pages/main/home/widgets/bottom_section.dart';
 
 import 'package:park_app/views/pages/main/home/widgets/top_section.dart';
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
             right: 0,
             child: Column(
               children: const [
-                MyAppBar(),
+                HomeAppBar(),
                 TopSection(),
               ],
             ),

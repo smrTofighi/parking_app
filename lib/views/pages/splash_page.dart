@@ -29,12 +29,12 @@ class _SplashPageState extends State<SplashPage> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const ParkingText(),
-              const SizedBox(
+            children: const [
+              ParkingText(),
+              SizedBox(
                 height: 16,
               ),
-              loading(color: Colors.black, size: 32),
+              Loading(color: Colors.black, size: 32),
             ],
           ),
         ),

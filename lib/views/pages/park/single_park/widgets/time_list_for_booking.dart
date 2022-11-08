@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/values/colors.dart';
+
+import '../../../../../core/values/colors.dart';
 
 class TimeListForBooking extends StatelessWidget {
   TimeListForBooking({super.key});

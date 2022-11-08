@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/values/colors.dart';
-import '../../../../core/values/icons.dart';
+import '../../../../../core/values/colors.dart';
+import '../../../../../core/values/icons.dart';
 
 class OpenTimeAndArea extends StatelessWidget {
   const OpenTimeAndArea({super.key});

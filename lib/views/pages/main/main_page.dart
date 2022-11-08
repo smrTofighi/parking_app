@@ -4,7 +4,7 @@ import 'package:park_app/core/values/colors.dart';
 import 'package:park_app/views/pages/main/home/home_page.dart';
 import 'package:park_app/views/pages/main/profile/profile_page.dart';
 import 'package:park_app/views/pages/main/follow_up_page.dart';
-import 'package:park_app/views/pages/main/widgets/bottom_navigation.dart';
+import 'package:park_app/views/pages/main/widgets/main_bottom_navigation.dart';
 
 // ignore: must_be_immutable
 class MainPage extends StatelessWidget {
@@ -25,7 +25,7 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: MyBottomNavigation(selectedIndex: selectedIndex),
+        bottomNavigationBar: MainBottomNavigation(selectedIndex: selectedIndex),
         extendBody: true,
       ),
     );

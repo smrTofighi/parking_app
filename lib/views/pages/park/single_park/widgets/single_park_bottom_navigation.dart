@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:park_app/routes/pages.dart';
 
-class ParkBottomNavigation extends StatelessWidget {
-  const ParkBottomNavigation({super.key});
+class SingleParkBottomNavigation extends StatelessWidget {
+  const SingleParkBottomNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,9 @@ class ParkBottomNavigation extends StatelessWidget {
       child: SizedBox(
         height: 45,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(NameRoutes.routeBookingDetailsParkPage);
+          },
           child: const Text(
             'رزرو کنید',
             style: TextStyle(color: Colors.black),

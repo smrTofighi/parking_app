@@ -7,10 +7,10 @@ class MyDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Divider(
+    return Divider(
       color: Colors.black,
-      indent: 16,
-      endIndent: 16,
+      indent: size,
+      endIndent: size,
     );
   }
 }

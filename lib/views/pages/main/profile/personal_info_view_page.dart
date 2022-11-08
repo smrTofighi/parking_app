@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:park_app/core/values/dimens.dart';
 import 'package:park_app/routes/pages.dart';
-
 import '../../../../core/values/colors.dart';
 import '../../../../core/values/icons.dart';
 import '../../../../core/values/strings.dart';
@@ -25,6 +24,7 @@ class PersonalInfoViewPage extends StatelessWidget {
             icon: ImageIcon(
               MyIcon.arrowRight.image,
               color: SolidColors.iconBlack,
+              size: Dimens.smallIcon,
             ),
           ),
           title: const Text(
@@ -43,7 +43,7 @@ class PersonalInfoViewPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.all(10.0),
+                margin: const EdgeInsets.only(top: 8, bottom: 16),
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
@@ -61,7 +61,7 @@ class PersonalInfoViewPage extends StatelessWidget {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    height: Dimens.height / 2.5,
+                    height: Dimens.height / 2.8,
                     width: Dimens.width / 3,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
@@ -79,14 +79,13 @@ class PersonalInfoViewPage extends StatelessWidget {
                         Text('نام خانوادگی :'),
                         Text('تلفن همراه :'),
                         Text('ایمیل :'),
-                        Text('نام خودرو :'),
                       ],
                     ),
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     width: Dimens.width / 1.7,
-                    height: Dimens.height / 2.5,
+                    height: Dimens.height / 2.8,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(8),
@@ -105,7 +104,6 @@ class PersonalInfoViewPage extends StatelessWidget {
                         Text('رضاتوفیقی'),
                         Text('09912382487'),
                         Text('mrtofxn@gmail.com'),
-                        Text('سمند سفید'),
                       ],
                     ),
                   ),
