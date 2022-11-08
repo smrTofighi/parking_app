@@ -28,18 +28,18 @@ class ProfilePage extends StatelessWidget {
               icon: MyIcon.user.image,
               title: MyString.personalInfo,
               onPressed: () {
-                Get.toNamed(NameRoutes.routePersonalInfoPage);
+                Get.toNamed(NameRoutes.routePersonalInfoViewPage);
               }),
           const SizedBox(
             height: 16.0,
           ),
-          ProfileListTile(
-              icon: MyIcon.history.image,
-              title: MyString.parkingHistory,
-              onPressed: () {}),
-          const SizedBox(
-            height: 16.0,
-          ),
+          // ProfileListTile(
+          //     icon: MyIcon.history.image,
+          //     title: MyString.parkingHistory,
+          //     onPressed: () {}),
+          // const SizedBox(
+          //   height: 16.0,
+          // ),
           ProfileListTile(
               icon: MyIcon.bookMark.image,
               title: MyString.favoriteParking,

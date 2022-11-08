@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:park_app/core/values/colors.dart';
 import 'package:park_app/views/pages/main/home/home_page.dart';
 import 'package:park_app/views/pages/main/profile/profile_page.dart';
-import 'package:park_app/views/pages/main/request_page.dart';
+import 'package:park_app/views/pages/main/follow_up_page.dart';
 import 'package:park_app/views/pages/main/widgets/bottom_navigation.dart';
 
 // ignore: must_be_immutable
@@ -20,7 +20,7 @@ class MainPage extends StatelessWidget {
             index: selectedIndex.value,
             children: const [
               Positioned.fill(child: HomePage()),
-              RequestPage(),
+              FollowUpPage(),
               ProfilePage(),
             ],
           ),

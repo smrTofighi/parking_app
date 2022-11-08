@@ -9,6 +9,21 @@ ThemeData lightTheme() {
     inputDecorationTheme: inputDecoration(),
     elevatedButtonTheme: elevatedButtonTheme(),
     textButtonTheme: textButtomTheme(),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+        overlayColor: MaterialStateProperty.resolveWith(
+          (states) => SolidColors.primary.withOpacity(0.1),
+        ),
+        side: MaterialStateProperty.all(
+          const BorderSide(color: SolidColors.primary),
+        ),
+      ),
+    ),
   );
 }
 
@@ -26,19 +41,22 @@ TextButtonThemeData textButtomTheme() {
 ElevatedButtonThemeData elevatedButtonTheme() {
   return ElevatedButtonThemeData(
     style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(SolidColors.primary),
-        elevation: MaterialStateProperty.resolveWith(
-          (states) {
-            if (states.contains(MaterialState.pressed)) {
-              return 0;
-            } else {
-              return null;
-            }
-          },
-        ),
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+      backgroundColor: MaterialStateProperty.all(SolidColors.primary),
+      elevation: MaterialStateProperty.resolveWith(
+        (states) {
+          if (states.contains(MaterialState.pressed)) {
+            return 0;
+          } else {
+            return null;
+          }
+        },
+      ),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14.0),
-        ))),
+        ),
+      ),
+    ),
   );
 }
 
@@ -57,7 +75,7 @@ InputDecorationTheme inputDecoration() {
     ),
     enabledBorder: OutlineInputBorder(
       borderSide: const BorderSide(
-        color: SolidColors.borderTextField,
+        color: Colors.grey,
       ),
       borderRadius: BorderRadius.circular(Dimens.radiusButtonAndTextField),
     ),

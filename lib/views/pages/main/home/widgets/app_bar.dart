@@ -22,13 +22,14 @@ class MyAppBar extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              Get.toNamed(NameRoutes.routePersonalInfoPage);
+              Get.toNamed(NameRoutes.routePersonalInfoViewPage);
             },
             child: const CircleAvatar(
               backgroundColor: Colors.white,
               child: Text('م'),
             ),
           ),
+          const Spacer(),
           IconButton(
             onPressed: () {},
             icon: const Icon(
