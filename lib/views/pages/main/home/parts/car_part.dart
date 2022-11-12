@@ -15,7 +15,7 @@ class CarPart extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        ParkingListHorizantal(),
+        ParkingListHorizontal(),
         Align(
           alignment: Alignment.centerRight,
           child: Text(
@@ -23,7 +23,7 @@ class CarPart extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        ParkingListHorizantal(),
+        ParkingListHorizontal(),
         SizedBox(
           height: 68,
         ),

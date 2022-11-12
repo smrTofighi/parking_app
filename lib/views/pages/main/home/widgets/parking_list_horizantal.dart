@@ -5,8 +5,9 @@ import 'package:park_app/routes/pages.dart';
 import '../../../../../core/values/dimens.dart';
 import '../../../../../models/park_model.dart';
 
-class ParkingListHorizantal extends StatelessWidget {
-  const ParkingListHorizantal({super.key});
+
+class ParkingListHorizontal extends StatelessWidget {
+  const ParkingListHorizontal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,21 +59,21 @@ class ParkingListHorizantal extends StatelessWidget {
                   children: [
                     parkCarList[index].isOpen!
                         ? const Text(
-                            'باز',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.greenAccent,
-                            ),
-                          )
+                      'باز',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.greenAccent,
+                      ),
+                    )
                         : const Text(
-                            'بسته',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.redAccent,
-                            ),
-                          ),
+                      'بسته',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.redAccent,
+                      ),
+                    ),
                     const SizedBox(
                       width: 12,
                     ),

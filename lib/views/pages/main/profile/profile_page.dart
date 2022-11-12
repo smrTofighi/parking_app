@@ -4,8 +4,9 @@ import 'package:park_app/core/values/strings.dart';
 import 'package:park_app/routes/pages.dart';
 import 'package:park_app/views/pages/main/profile/widgets/divider.dart';
 import 'package:park_app/views/pages/main/profile/widgets/profile_list_tile.dart';
-import 'package:park_app/views/pages/main/profile/widgets/user_profile_view.dart';
+import '../../../../core/values/dimens.dart';
 import '../../../../core/values/icons.dart';
+import '../../../../gen/assets.gen.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -27,7 +28,7 @@ class ProfilePage extends StatelessWidget {
           ProfileListTile(
               icon: MyIcon.user.image,
               title: MyString.personalInfo,
-              onPressed: () {
+              onTap: () {
                 Get.toNamed(NameRoutes.routePersonalInfoViewPage);
               }),
           const SizedBox(
@@ -43,7 +44,7 @@ class ProfilePage extends StatelessWidget {
           ProfileListTile(
               icon: MyIcon.bookMark.image,
               title: MyString.favoriteParking,
-              onPressed: () {}),
+              onTap: () {}),
           const SizedBox(
             height: 16.0,
           ),
@@ -54,28 +55,28 @@ class ProfilePage extends StatelessWidget {
           ProfileListTile(
               icon: MyIcon.upgrade.image,
               title: MyString.upgrade,
-              onPressed: () {}),
+              onTap: () {}),
           const SizedBox(
             height: 16.0,
           ),
           ProfileListTile(
               icon: MyIcon.privacy.image,
               title: MyString.privacy,
-              onPressed: () {}),
+              onTap: () {}),
           const SizedBox(
             height: 16.0,
           ),
           ProfileListTile(
               icon: MyIcon.aboutUs.image,
               title: MyString.aboutUs,
-              onPressed: () {}),
+              onTap: () {}),
           const SizedBox(
             height: 16.0,
           ),
           ProfileListTile(
               icon: MyIcon.logOut.image,
               title: MyString.logOut,
-              onPressed: () {}),
+              onTap: () {}),
           const Spacer(),
           const Text(
             'ورژن 1.0',
@@ -86,6 +87,50 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class UserProfileView extends StatelessWidget {
+  const UserProfileView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 55,
+          height: 55,
+          decoration: BoxDecoration(
+              borderRadius:
+              BorderRadius.circular(Dimens.radiusButtonAndTextField),
+              image: DecorationImage(
+                  image: Image.asset(Assets.images.img.path).image,
+                  fit: BoxFit.cover)),
+        ),
+        const SizedBox(
+          width: 16.0,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'سیدمحمد رضاتوفیقی',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'mrtofxn@gmail.com',
+              style:
+              TextStyle(fontSize: 13, color: Color.fromRGBO(97, 97, 97, 1)),
+            ),
+          ],
+        )
+      ],
     );
   }
 }

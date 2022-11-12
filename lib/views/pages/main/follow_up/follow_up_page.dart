@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:park_app/core/values/dimens.dart';
 import 'package:park_app/core/values/icons.dart';
 
-import '../../../core/values/colors.dart';
+import '../../../../core/values/colors.dart';
 
 class FollowUpPage extends StatelessWidget {
   const FollowUpPage({super.key});
