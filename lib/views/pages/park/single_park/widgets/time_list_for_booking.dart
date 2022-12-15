@@ -18,7 +18,7 @@ class TimeListForBooking extends StatelessWidget {
                 selectedTimeOfParking.value = index;
               },
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 200),
                 margin: const EdgeInsets.all(8.0),
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 width: 65,

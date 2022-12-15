@@ -5,7 +5,6 @@ import 'package:park_app/core/values/colors.dart';
 import 'package:park_app/views/pages/main/home/home_page.dart';
 import 'package:park_app/views/pages/main/profile/profile_page.dart';
 import 'package:park_app/views/pages/main/follow_up/follow_up_page.dart';
-
 import '../../../core/values/dimens.dart';
 import '../../../core/values/icons.dart';
 
@@ -46,7 +45,7 @@ class MainBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-          () => CurvedNavigationBar(
+      () => CurvedNavigationBar(
         items: [
           Padding(
             padding: const EdgeInsets.all(8.0),

@@ -9,6 +9,29 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsAnimationsGen {
+  const $AssetsAnimationsGen();
+
+  /// File path: assets/animations/animation1.json
+  String get animation1 => 'assets/animations/animation1.json';
+
+  /// File path: assets/animations/animation2.json
+  String get animation2 => 'assets/animations/animation2.json';
+
+  /// File path: assets/animations/animation3.json
+  String get animation3 => 'assets/animations/animation3.json';
+
+  /// File path: assets/animations/animation4.json
+  String get animation4 => 'assets/animations/animation4.json';
+
+  /// File path: assets/animations/animation5.json
+  String get animation5 => 'assets/animations/animation5.json';
+
+  /// List of all assets
+  List<String> get values =>
+      [animation1, animation2, animation3, animation4, animation5];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -183,6 +206,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
+  static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }

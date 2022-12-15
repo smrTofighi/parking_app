@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:park_app/core/values/storage.dart';
 import 'package:park_app/core/values/strings.dart';
 import 'package:park_app/routes/pages.dart';
 import 'package:park_app/views/pages/main/profile/widgets/divider.dart';
@@ -34,13 +36,6 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(
             height: 16.0,
           ),
-          // ProfileListTile(
-          //     icon: MyIcon.history.image,
-          //     title: MyString.parkingHistory,
-          //     onPressed: () {}),
-          // const SizedBox(
-          //   height: 16.0,
-          // ),
           ProfileListTile(
               icon: MyIcon.bookMark.image,
               title: MyString.favoriteParking,
@@ -76,7 +71,10 @@ class ProfilePage extends StatelessWidget {
           ProfileListTile(
               icon: MyIcon.logOut.image,
               title: MyString.logOut,
-              onTap: () {}),
+              onTap: () {
+                GetStorage().write(StorageKey.isLogin, false);
+                Get.offAllNamed(NameRoutes.routeSignupPage);
+              }),
           const Spacer(),
           const Text(
             'ورژن 1.0',
@@ -105,7 +103,7 @@ class UserProfileView extends StatelessWidget {
           height: 55,
           decoration: BoxDecoration(
               borderRadius:
-              BorderRadius.circular(Dimens.radiusButtonAndTextField),
+                  BorderRadius.circular(Dimens.radiusButtonAndTextField),
               image: DecorationImage(
                   image: Image.asset(Assets.images.img.path).image,
                   fit: BoxFit.cover)),
@@ -126,7 +124,7 @@ class UserProfileView extends StatelessWidget {
             Text(
               'mrtofxn@gmail.com',
               style:
-              TextStyle(fontSize: 13, color: Color.fromRGBO(97, 97, 97, 1)),
+                  TextStyle(fontSize: 13, color: Color.fromRGBO(97, 97, 97, 1)),
             ),
           ],
         )

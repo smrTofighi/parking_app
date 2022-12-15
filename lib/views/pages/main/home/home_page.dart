@@ -63,6 +63,9 @@ class BottomSection extends StatelessWidget {
             child: TextField(
               cursorColor: SolidColors.primary,
               style: TextStyle(fontSize: 14),
+              decoration: InputDecoration(
+                hintText: 'هرجایی رو میخوای جستجو کن'
+              ),
             ),
           ),
           const TopNavigation(),
