@@ -19,32 +19,35 @@ class ProfileListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            width: 38,
-            height: 38,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: SolidColors.bgPrimary,
+      child: SizedBox(
+        width: Dimens.width,
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              width: 38,
+              height: 38,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: SolidColors.bgPrimary,
+              ),
+              child: ImageIcon(
+                icon,
+                size: Dimens.smallIcon,
+                color: SolidColors.iconBlack,
+              ),
             ),
-            child: ImageIcon(
-              icon,
+            const SizedBox(
+              width: 16.0,
+            ),
+            Text(title),
+            const Spacer(),
+            ImageIcon(
+              MyIcon.arrowLeft.image,
               size: Dimens.smallIcon,
-              color: SolidColors.iconBlack,
             ),
-          ),
-          const SizedBox(
-            width: 16.0,
-          ),
-          Text(title),
-          const Spacer(),
-          ImageIcon(
-            MyIcon.arrowLeft.image,
-            size: Dimens.smallIcon,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

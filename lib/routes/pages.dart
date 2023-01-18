@@ -8,4 +8,7 @@ class NameRoutes {
   static const String routeResultBookingParkPage = '/ResultBookingParkPage';
   static const String routePersonalInfoEditPage = '/PersonalInfoEditPage';
   static const String routePersonalInfoViewPage = '/PersonalInfoViewPage';
+  static const String routeAboutUsPage = '/AboutUsPage';
+  static const String routeFavoriteParkingsPage = '/FavoriteParkingsPage';
+  static const String routePrivacyPage = '/PrivacyPage';
 }

@@ -128,7 +128,7 @@ class ResultBookingParkPage extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.fromLTRB(12, 12, 12, 24),
                 width: Dimens.width,
-                height: Dimens.height / 1.9,
+                height: Dimens.height / 2.5,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: SolidColors.bgWhite,
@@ -140,29 +140,12 @@ class ResultBookingParkPage extends StatelessWidget {
                   ],
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const SizedBox(
-                      height: 16.0,
-                    ),
                     const Text(
                       'کد رزرو : 2566998563',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 8),
-                      width: 160,
-                      height: 160,
-                      color: Colors.black,
-                    ),
-                    const SizedBox(
-                      height: 8.0,
-                    ),
-                    const Text(
-                      'در محل پارکینگ بارکد اسکن شود',
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
-                    ),
-                    const SizedBox(
-                      height: 12.0,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
                     const MyDivider(color: Colors.black, size: 0),
                     const Padding(
@@ -174,7 +157,7 @@ class ResultBookingParkPage extends StatelessWidget {
                           fontSize: 14,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

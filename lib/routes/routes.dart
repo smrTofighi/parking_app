@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:park_app/routes/pages.dart';
+import 'package:park_app/views/pages/main/profile/about_us_page.dart';
+import 'package:park_app/views/pages/main/profile/favorite_parkings_page.dart';
 import 'package:park_app/views/pages/main/profile/personal_info_edit_page.dart';
+import 'package:park_app/views/pages/main/profile/privacy_page.dart';
 import 'package:park_app/views/pages/onboarding/onboarding_page.dart';
 import 'package:park_app/views/pages/park/booking_details_park_page.dart';
 import 'package:park_app/views/pages/park/result_booking_park.dart';
@@ -47,5 +50,17 @@ List<GetPage> routes = [
   GetPage(
     name: NameRoutes.routeResultBookingParkPage,
     page: () => const ResultBookingParkPage(),
+  ),
+  GetPage(
+    name: NameRoutes.routeAboutUsPage,
+    page: () => const AboutUsPage(),
+  ),
+  GetPage(
+    name: NameRoutes.routeFavoriteParkingsPage,
+    page: () => const FavoriteParkingsPage(),
+  ),
+  GetPage(
+    name: NameRoutes.routePrivacyPage,
+    page: () => const PrivacyPage(),
   ),
 ];

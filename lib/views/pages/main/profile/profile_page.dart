@@ -39,7 +39,9 @@ class ProfilePage extends StatelessWidget {
           ProfileListTile(
               icon: MyIcon.bookMark.image,
               title: MyString.favoriteParking,
-              onTap: () {}),
+              onTap: () {
+                Get.toNamed(NameRoutes.routeFavoriteParkingsPage);
+              }),
           const SizedBox(
             height: 16.0,
           ),
@@ -57,14 +59,18 @@ class ProfilePage extends StatelessWidget {
           ProfileListTile(
               icon: MyIcon.privacy.image,
               title: MyString.privacy,
-              onTap: () {}),
+              onTap: () {
+                Get.toNamed(NameRoutes.routePrivacyPage);
+              }),
           const SizedBox(
             height: 16.0,
           ),
           ProfileListTile(
               icon: MyIcon.aboutUs.image,
               title: MyString.aboutUs,
-              onTap: () {}),
+              onTap: () {
+                Get.toNamed(NameRoutes.routeAboutUsPage);
+              }),
           const SizedBox(
             height: 16.0,
           ),

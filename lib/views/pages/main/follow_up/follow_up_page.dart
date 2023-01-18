@@ -110,7 +110,7 @@ class FollowUpPage extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.fromLTRB(8, 14, 8, 0),
                           padding: const EdgeInsets.symmetric(horizontal: 6),
-                          height: 45,
+                          height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(color: Colors.grey),
@@ -223,7 +223,7 @@ class FollowUpPage extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.fromLTRB(8, 14, 8, 0),
                           padding: const EdgeInsets.symmetric(horizontal: 6),
-                          height: 45,
+                          height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(color: Colors.grey),
@@ -336,7 +336,7 @@ class FollowUpPage extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.fromLTRB(8, 14, 8, 0),
                           padding: const EdgeInsets.symmetric(horizontal: 6),
-                          height: 45,
+                          height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(color: Colors.grey),

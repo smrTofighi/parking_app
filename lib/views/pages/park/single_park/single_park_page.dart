@@ -51,9 +51,9 @@ class SingleParkPage extends StatelessWidget {
               ),
               CarouselSlider(
                 items: const [
-                  ImageSlide(),
-                  ImageSlide(),
-                  ImageSlide(),
+                  ImageSlide(index: 0),
+                  ImageSlide(index: 2),
+                  ImageSlide(index: 3),
                 ],
                 carouselController: _controller,
                 options: CarouselOptions(
@@ -90,7 +90,7 @@ class SingleParkPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const RulesText(),
+              const RulesText(index: 1),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Align(
@@ -105,10 +105,14 @@ class SingleParkPage extends StatelessWidget {
                 ),
               ),
               TimeListForBooking(),
+              const SizedBox(
+                height: 60.0,
+              )
             ],
           ),
         ),
         bottomNavigationBar: const SingleParkBottomNavigation(),
+        extendBody: true,
       ),
     );
   }

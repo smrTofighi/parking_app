@@ -5,7 +5,6 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:park_app/bindings/binding.dart';
 import 'package:park_app/routes/routes.dart';
-import 'package:park_app/views/pages/onboarding/onboarding_page.dart';
 import 'package:park_app/views/pages/splash/splash_page.dart';
 import 'core/themes/light_theme.dart';
 import 'core/values/colors.dart';

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:park_app/core/values/dimens.dart';
 import 'package:park_app/gen/assets.gen.dart';
 
-class ImageSlide extends StatelessWidget {
-  const ImageSlide({super.key});
+import '../../../../../models/park_model.dart';
 
+class ImageSlide extends StatelessWidget {
+  const ImageSlide({super.key, required this.index});
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +15,7 @@ class ImageSlide extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Dimens.radiusButtonAndTextField),
         image: DecorationImage(
-            image: Image.asset(Assets.images.img.path).image,
+            image: NetworkImage(parkCarList[index].image.toString()),
             fit: BoxFit.cover),
       ),
     );

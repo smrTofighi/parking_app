@@ -8,6 +8,26 @@ class TimeListForBooking extends StatelessWidget {
   final RxInt selectedTimeOfParking = 0.obs;
   @override
   Widget build(BuildContext context) {
+    List timeList = [
+      '1 ساعت',
+      '2 ساعت',
+      '3 ساعت',
+      '4 ساعت',
+      '5 ساعت',
+      '6 ساعت',
+      '7 ساعت',
+      '8 ساعت',
+    ];
+    List priceList = [
+      '1500 تومان',
+      '3000 تومان',
+      '4500 تومان',
+      '6000 تومان',
+      '7500 تومان',
+      '9000 تومان',
+      '10000 تومان',
+      '11000 تومان',
+    ];
     return SizedBox(
       height: 85,
       child: ListView.builder(
@@ -41,14 +61,14 @@ class TimeListForBooking extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Text(
-                      '1 ساعت',
-                      style: TextStyle(fontSize: 12),
+                      timeList[index],
+                      style: const TextStyle(fontSize: 12),
                     ),
                     Text(
-                      '2000 تومان',
-                      style: TextStyle(fontSize: 12),
+                      priceList[index],
+                      style: const TextStyle(fontSize: 12),
                     ),
                   ],
                 ),
@@ -56,7 +76,7 @@ class TimeListForBooking extends StatelessWidget {
             ),
           );
         },
-        itemCount: 6,
+        itemCount: timeList.length,
         scrollDirection: Axis.horizontal,
       ),
     );
