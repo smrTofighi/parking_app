@@ -28,29 +28,32 @@ class FavoriteParkingsPage extends StatelessWidget {
             ),
           ),
         ),
-        body: ListView.builder(
-          itemBuilder: (context, index) => Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.all(8.0),
-                width: Dimens.width / 3.9,
-                height: Dimens.height / 7,
-                decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.circular(Dimens.radiusButtonAndTextField),
-                  color: SolidColors.primary,
-                  image: const DecorationImage(
-                    image: NetworkImage(
-                        'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              )
-            ],
-          ),
-          itemCount: 12,
-          scrollDirection: Axis.vertical,
+        body: const Center(
+          child: Text('هیچ پارکینگی اینجا اضافه نشده است'),
         ),
+        // body: ListView.builder(
+        //   itemBuilder: (context, index) => Row(
+        //     children: [
+        //       Container(
+        //         margin: const EdgeInsets.all(8.0),
+        //         width: Dimens.width / 3.9,
+        //         height: Dimens.height / 7,
+        //         decoration: BoxDecoration(
+        //           borderRadius:
+        //               BorderRadius.circular(Dimens.radiusButtonAndTextField),
+        //           color: SolidColors.primary,
+        //           image: const DecorationImage(
+        //             image: NetworkImage(
+        //                 'https://cdn.yjc.news/files/fa/news/1401/3/15/16156862_661.jpg'),
+        //             fit: BoxFit.cover,
+        //           ),
+        //         ),
+        //       )
+        //     ],
+        //   ),
+        //   itemCount: 12,
+        //   scrollDirection: Axis.vertical,
+        // ),
       ),
     );
   }
